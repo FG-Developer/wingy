@@ -1,0 +1,580 @@
+@import url('./font.css');
+@import url('./datepicker.css');
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'yummosemibold';
+    overflow-x: hidden;
+}
+
+body {
+    background: #f5f7f8;
+    min-height: 100%;
+    color: #434343;
+}
+
+:focus {
+    outline: none;
+}
+
+a {
+    font-family: 'yummosemibold';
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #434343;
+    font-size: 1.5em;
+}
+
+.wrapper {
+    display: flex;
+}
+
+nav {
+    float: left;
+    max-width: 219px;
+    position: relative;
+    width: 20%;
+}
+
+nav .logo img {
+    margin: 20px 0 0 60px;
+}
+
+nav .nav-top {
+    width: 219px;
+    height: 358px;
+    background: url('../img/sidebar-top-bg.png') no-repeat;
+}
+
+nav .brand-logo-area {
+    position: absolute;
+    left: 10px;
+    top: 150px;
+    width: 186px;
+    height: 186px;
+    background: url('../img/brand-logo-area.png');
+}
+
+nav .brand-logo-area img {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 60%;
+}
+
+nav .menu {
+    background: url('../img/sidebar-bg.png');
+    padding-bottom: 80px;
+    position: relative;
+    height: calc(100% - 174px);
+    width: 100%;
+    min-width: 219px;
+}
+
+nav .menu ul {
+    margin: 0 0 0 60px;
+    padding: 0;
+    position: absolute;
+    width: 71%;
+}
+
+nav .menu ul li {
+    list-style: none;
+    margin-top: 30px;
+}
+
+nav .menu .hover-slide {
+    width: 100%;
+    height: 125px;
+    background: url('../img/menu-hover-effect.png') right center no-repeat;
+    position: absolute;
+    left: 45px;
+    top: -43px;
+    transition: top .5s ease;
+}
+
+nav .menu .hover-slide:after {
+    position: absolute;
+    content: '';
+    width: 213px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 30px;
+    left: -10px;
+    top: 32px;
+}
+
+nav .menu ul li:first-child {
+    margin-top: 0;
+}
+
+nav .menu ul li a {
+    position: relative;
+    z-index: 200;
+    display: block;
+}
+
+nav .menu ul li.language {
+    margin-top: 80px;
+    font-size: 1.2em;
+}
+
+nav .menu ul li.language a {
+    font-family: 'yummolight';
+    display: inline;
+    font-size: 1.2em;
+}
+
+nav .menu ul li.language a.active {
+    font-family: 'yummobold';
+    color: #434343;
+}
+
+nav .menu ul li.log-out {
+    margin-top: 20px;
+}
+
+nav .menu ul li.log-out a {
+    font-size: 1.2em;
+}
+
+nav .menu ul li.language a:hover,
+nav .menu ul li.log-out a:hover {
+    color: #434343;
+}
+
+section.content {
+    height: auto;
+    margin-left: 7%;
+    margin-top: 80px;
+    display: flex;
+    width: 80%;
+}
+
+section.content .left-area {
+    width: 50%;
+}
+
+section.content .left-area .text-area h2 {
+    font-size: 3.5em;
+    margin: 0;
+}
+
+section.content .left-area .text-area span {
+    font-size: 1em;
+    width: 100%;
+    display: block;
+}
+
+section.content .left-area .text-area span.textarea textarea.comment {
+    border: none;
+    width: 100%;
+    height: 100px;
+    background: transparent;
+    font-size: 1em;
+}
+
+section.content .left-area .text-area .text-buttons {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+section.content .left-area .text-area .text-buttons a {
+    color: #8fa3aa;
+}
+
+section.content .left-area .text-area .text-buttons a.active,
+section.content .left-area .text-area .text-buttons a:hover {
+    color: #434343;
+}
+
+section.content .left-area .text-area .edit {
+    float: left;
+}
+
+section.content .left-area .text-area .save {
+    float: right;
+}
+
+section.content .left-area .calendar-area {
+    clear: both;
+    padding-top: 25px;
+    display: flex;
+}
+
+section.content .left-area .calendar-area button {
+    width: 25px;
+    height: 42px;
+    background: transparent;
+    border: none;
+}
+
+section.content .left-area .calendar-area button.prev {
+    background: url('../img/left-arrow-icon.png');
+}
+
+section.content .left-area .calendar-area button.next {
+    background: url('../img/right-arrow-icon.png');
+}
+
+section.content .left-area .calendar {
+    width: 80%;
+    margin: 0 20%;
+}
+
+section.content .left-area .calendar input.datepicker {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1em;
+    text-align: center;
+    background-image: url('../img/down-error-icon.png');
+    background-repeat: no-repeat;
+    background-position: 90%;
+    -webkit-box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
+    -moz-box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
+    box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
+}
+
+section.content .left-area .calendar input.datepicker:focus {
+    background-color: #ffea00;
+}
+
+section.content .left-area .days ul {
+    margin: 20px auto 0 auto;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+section.content .left-area .days ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 8%;
+}
+
+section.content .left-area .days ul li:last-child {
+    margin-right: 0;
+}
+
+section.content .left-area .days ul li a {
+    font-size: 1.5em;
+    color: #8fa3aa;
+}
+
+section.content .left-area .days ul li a.active {
+    color: #434343;
+    font-size: 2m;
+}
+
+section.content .left-area .days ul li a:hover {
+    color: #434343;
+    font-size: 2em;
+}
+
+section.content .left-area .main-data-list {
+    height: 569px;
+    width: 100%;
+    margin-top: 30px;
+    overflow-y: hidden;
+}
+
+section.content .left-area .main-data-list div.item {
+    width: 96% !important;
+    margin: 0 2%;
+    border-radius: 10px;
+    line-height: 59px;
+    -webkit-box-shadow: -1px -1px 7px 3px rgba(213, 213, 213, 0.45);
+    -moz-box-shadow: -1px -1px 7px 3px rgba(213, 213, 213, 0.45);
+    box-shadow: -1px -1px 7px 3px rgba(213, 213, 213, 0.45);
+    box-sizing: border-box;
+    border: none;
+    position: relative;
+    background-color: white;
+    cursor: pointer;
+}
+
+section.content .left-area .main-data-list div.item .item-content {
+    display: flex;
+}
+
+section.content .left-area .main-data-list div.item .item-content span {
+    transition: all .3s ease-in;
+}
+
+section.content .left-area .main-data-list div.item .item-content.active span {
+    z-index: 3;
+    color: inherit;
+    filter: brightness(0) invert(0);
+    -webkit-filter: brightness(0) invert(0);
+    -moz-filter: brightness(0) invert(0);
+}
+
+section.content .left-area .main-data-list div.item span.title {
+    width: 40%;
+    font-size: 1.5em;
+    padding-left: 5%;
+}
+
+section.content .left-area .main-data-list div.item span.number {
+    font-size: 2em;
+    color: #1daee4;
+    width: 15%;
+    text-align: right;
+    margin-right: 5%;
+}
+
+section.content .left-area .main-data-list div.item span.chart {
+    width: 30%;
+    padding-right: 2%;
+}
+
+section.content .left-area .main-data-list div.item span.chart img {
+    width: 150px;
+    margin-top: 5px;
+}
+
+section.content .left-area .main-data-list div.item .item-content-detail {
+    display: none;
+    width: 100%;
+    height: 333px;
+    border-radius: 10px;
+    background: rgb(247, 183, 14);
+    background: linear-gradient(-58deg, rgba(247, 183, 14, 1) 0%, rgba(255, 234, 0, 1) 100%);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    overflow: hidden;
+    padding-top: 60px;
+}
+
+section.content .left-area .main-data-list div.item .item-content-detail .slider-item-contents {
+    display: none;
+    width: 100%;
+}
+
+section.content .left-area .main-data-list div.item .item-content-detail .slider-item-contents .data-item {
+    width: 92% !important;
+    margin: 0 auto;
+    border-radius: 50px;
+    box-sizing: border-box;
+    background-color: white;
+    display: inherit;
+    transition: all 3s ease;
+}
+
+section.content .left-area .main-data-list div.item .item-content-detail .slider-item-contents .data-item span.number {
+    width: 60%;
+    float: right;
+    text-align: right;
+}
+
+section.content .right-area {
+    width: 50%;
+}
+
+section.content .right-area .right-area-container {
+    width: 90%;
+    float: right;
+    background: #fff;
+    height: auto;
+    border-top-left-radius: 40px;
+    height: 100%;
+    -webkit-box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
+    -moz-box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
+    box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
+    right: -100%;
+    transition: all .4s ease-in-out;
+    position: relative;
+}
+
+section.content .right-area .right-area-container .section-connector {
+    display: none;
+    position: absolute;
+    left: -64px;
+    top: 563px;
+    background: url('../img/section-connector.png') no-repeat;
+    width: 90px;
+    height: 400px;
+}
+
+section.content .right-area .right-area-container.active .section-connector {
+    display: block;
+}
+
+section.content .right-area .right-area-container .section-connector:after {
+    position: absolute;
+    right: 0;
+    top: 103px;
+    content: '';
+    width: 200px;
+    height: 62.2px;
+    background: #fff;
+    z-index: 89;
+}
+
+section.content .right-area .right-area-container.active {
+    right: 0;
+}
+
+section.content .right-area .right-area-container img {
+    position: absolute;
+    right: 15px;
+    top: -13px;
+    cursor: pointer;
+    width: 70px;
+}
+
+section.content .right-area .right-area-container .button-area {
+    display: flex;
+    margin: 40px 0 20px 10px;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+}
+
+section.content .right-area .right-area-container .button-area.active {
+    opacity: 1;
+}
+
+section.content .right-area .right-area-container .button-area button {
+    width: 25%;
+    height: 40px;
+    border-radius: 10px;
+    background: rgb(247, 183, 14);
+    background: linear-gradient(-58deg, rgba(247, 183, 14, 1) 0%, rgba(255, 234, 0, 1) 100%);
+    border: none;
+    margin-left: 10px;
+    font-size: .8em;
+}
+
+section.content .right-area .right-area-container .accordion-contents {
+    display: inherit;
+    width: 90%;
+    margin: 20px auto;
+    background: #fff;
+    height: 600px;
+    overflow-y: scroll;
+    left: 100%;
+    transition: all .3s ease-in-out;
+    padding-top: 10px;
+    position: absolute;
+    right: 0;
+}
+
+section.content .right-area .right-area-container .accordion-contents.active {
+    transition-delay: .1s;
+    left: 0;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item:first-child {
+    margin-top: 0;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item {
+    padding: 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(213, 213, 213, 0.45);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(213, 213, 213, 0.45);
+    box-shadow: 0px 0px 5px 3px rgba(213, 213, 213, 0.45);
+    background: #fff;
+    transition: top .2s ease-in-out;
+    width: 85%;
+    margin: -10px auto 0 auto;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item.active {
+    background: rgb(247, 183, 14);
+    background: linear-gradient(-58deg, rgba(247, 183, 14, 1) 0%, rgba(255, 234, 0, 1) 100%);
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content {
+    display: none;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .header {
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .header .row {
+    display: flex;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .header .row .col {
+    width: 16.6%;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .header .col.name {
+    width: 50%;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .header .col.country,
+section.content .right-area .right-area-container .accordion-contents .item .header .col.number,
+section.content .right-area .right-area-container .accordion-contents .item .content {
+    font-size: .8em;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .header .col.number {
+    width: 67%;
+    text-align: right;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .row.np {
+    padding: 0 0 15px 0;
+    margin-top: -40px;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .row.bt {
+    border-top: 1px solid rgba(16, 15, 13, .2);
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .row .col {
+    width: 16.6%;
+    padding-top: 10px;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .row.header-row .col {
+    width: 20.8%;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .row.header-row .col .value {
+    font-size: 1.2em
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .row .col.icon {
+    height: 50px;
+    margin-top: 17px;
+    width: 16.6%;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .row .col.icon.women {
+    background: url('../img/women-icon.png') no-repeat;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .row .col.icon.man {
+    background: url('../img/man-icon.png') no-repeat;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .date {
+    text-align: right;
+    flex: auto;
+}
+
+section.content .right-area .right-area-container .accordion-contents .item .content .row .col .key {
+    opacity: .5;
+}
