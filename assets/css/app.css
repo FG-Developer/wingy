@@ -236,7 +236,7 @@ section.content .left-area .calendar input.datepicker {
     border: none;
     font-size: 1em;
     text-align: center;
-    background-image: url('../img/down-error-icon.png');
+    background-image: url('../img/down-arrow-icon.png');
     background-repeat: no-repeat;
     background-position: 90%;
     -webkit-box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
@@ -467,11 +467,13 @@ section.content .right-area .right-area-container .accordion-contents {
     padding-top: 10px;
     position: absolute;
     right: 0;
+    opacity: 0;
 }
 
 section.content .right-area .right-area-container .accordion-contents.active {
     transition-delay: .1s;
     left: 0;
+    opacity: 1;
 }
 
 section.content .right-area .right-area-container .accordion-contents .item:first-child {

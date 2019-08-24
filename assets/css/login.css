@@ -1,0 +1,319 @@
+@import url('./font.css');
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'yummosemibold';
+}
+
+body {
+    min-height: 100%;
+    background: #ffdb00;
+}
+
+:focus {
+    outline: none;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background: url('../img/login-bg.jpg') no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    padding: 7% 0 10% 0;
+    border-bottom-right-radius: 300px;
+}
+
+.wrapper .wingy-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.wrapper .wingy-logo img {
+    width: 70px;
+}
+
+.wrapper div.form-area {
+    float: left;
+    margin-left: 5%;
+}
+
+.wrapper div.form-area .brand-logo-area {
+    width: 265px;
+    height: 265px;
+    background: url('../img/brand-logo-area-login.png');
+    margin: 0 auto 3% auto;
+    position: relative;
+}
+
+.wrapper div.form-area .brand-logo-area img {
+    position: absolute;
+    top: 115px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 60%;
+    max-width: 170px;
+}
+
+.wrapper div.form-area div.form-container {
+    margin-top: 50px;
+    position: relative;
+}
+
+.wrapper div.form-area div.form-container>div {
+    width: 510px;
+}
+
+.wrapper div.form-area div.form-container .head {
+    background: url('../img/login-form-bg-head.png') no-repeat;
+    height: 47px;
+    text-align: center;
+    position: relative;
+}
+
+.wrapper div.form-area div.form-container .content {
+    background: url('../img/login-form-bg-center.png');
+    overflow-y: scroll;
+    max-height: 300px;
+    padding-top: 50px;
+}
+
+.wrapper div.form-area div.form-container .bottom {
+    background: url('../img/login-form-bg-bottom.png') no-repeat;
+    height: 57px;
+}
+
+.wrapper div.form-area div.form-container span {
+    -webkit-text-shadow: 0 0 5px rgba(9, 5, 5, 0.57);
+    -moz-text-shadow: 0 0 5px rgba(9, 5, 5, 0.57);
+    text-shadow: 0 0 5px rgba(9, 5, 5, 0.57);
+    color: #fff;
+    font-size: 2em;
+    display: block;
+    text-align: center;
+}
+
+.wrapper div.form-area div.form-container .form-success span.success-text {
+    width: 70%;
+    margin: 20px auto;
+    font-size: 1.7em
+}
+
+.wrapper div.form-area div.form-container .form-success .socials {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.wrapper div.form-area div.form-container .form-success span.social-text {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    display: block !important;
+}
+
+.wrapper div.form-area div.form-container .form-success .socials span {
+    display: inline-flex;
+    margin: 5px;
+}
+
+.wrapper div.form-area div.form-container .content ::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: white;
+}
+
+.wrapper div.form-area div.form-container .content :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+}
+
+.wrapper div.form-area div.form-container .content ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: white;
+}
+
+.wrapper div.form-area div.form-container .content .steps {
+    display: none;
+}
+
+.wrapper div.form-area div.form-container .content .one {
+    display: block;
+}
+
+.wrapper div.form-area div.form-container .form-success {
+    display: none;
+}
+
+.wrapper div.form-area div.form-container .content .form-row {
+    width: 90%;
+    margin: 0 auto 20px auto;
+    position: relative;
+}
+
+.wrapper div.form-area div.form-container .content .form-row:last-child {
+    margin-bottom: 0;
+}
+
+.wrapper div.form-area div.form-container .content .form-row select,
+.wrapper div.form-area div.form-container .content .form-row input {
+    height: 60px;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, .7);
+    background: rgba(0, 0, 0, .3);
+    border-radius: 30px;
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    padding: 0 25px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    font-family: 'yummoregular';
+}
+
+.wrapper div.form-area div.form-container .content .form-row input[type=checkbox] {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* Customize the label (the container) */
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* Hide the browser's default checkbox */
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border: 2px solid rgba(255, 255, 255, .7);
+    background: rgba(0, 0, 0, .3);
+    border-radius: 15px;
+    padding: 3px;
+}
+
+
+/* Show the checkmark when checked */
+
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+    content: '';
+}
+
+
+/* Style the checkmark/indicator */
+
+.checkbox-container .checkmark:after {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 15px;
+    height: 15px;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: #ffea00;
+}
+
+.wrapper div.form-area div.form-container .content .form-row input[type=button],
+.wrapper div.form-area div.form-container .content .form-row input[type=submit] {
+    background: rgb(247, 183, 14) url('../img/continue-icon.png');
+    background: linear-gradient(-58deg, rgba(247, 183, 14, 1) 0%, rgba(255, 234, 0, 1) 100%) url('../img/continue-icon.png');
+    color: #000;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    font-family: 'yummosemibold';
+}
+
+.wrapper div.form-area div.form-container .content .form-row select {
+    text-align-last: center;
+    background-image: url('../img/white-down-arrow.png');
+    background-repeat: no-repeat;
+    background-position: 95% center;
+}
+
+label.error {
+    content: '';
+    left: 0;
+    background: #fc1016;
+    -webkit-box-shadow: 11px 15px 16px -12px rgba(9, 5, 5, 1);
+    -moz-box-shadow: 11px 15px 16px -12px rgba(9, 5, 5, 1);
+    box-shadow: 11px 15px 16px -12px rgba(9, 5, 5, 1);
+    width: 240px;
+    height: 40px;
+    border-radius: 15px;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: -50px;
+    right: 0;
+    margin: 0 auto;
+    font-size: .8em;
+}
+
+label.error:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid red;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        padding: 0;
+    }
+    .wrapper div.form-area {
+        float: none;
+        zoom: .7;
+        margin: 0 auto;
+        display: block;
+        padding-top: 50px;
+    }
+    .wrapper div.form-area div.form-container .container {
+        margin: 0 auto;
+    }
+}
