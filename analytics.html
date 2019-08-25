@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>VINGY ANALYTICS</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/js/jquery-ui/jquery-ui.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav>
+            <div class="brand-logo-area"><img src="assets/img/brand-logo.png"></div>
+            <div class="nav-top">
+                <div class="logo">
+                    <img src="assets/img/logo.png" alt="VINGY">
+                </div>
+            </div>
+            <div class="menu">
+                <div class="hover-slide"></div>
+                <ul>
+                    <li class="menu-item"><a href="index.html">main</a></li>
+                    <li class="menu-item active"><a href="analytics.html">analytics</a></li>
+                    <li class="menu-item"><a href="javascript:;">cmx</a></li>
+                    <li class="menu-item"><a href="javascript:;">ap edit</a></li>
+                    <li class="menu-item"><a href="javascript:;">picture</a></li>
+                    <li class="language"><a href="javascript:;">tr</a> - <a href="javascript:;" class="active">en</a></li>
+                    <li class="log-out"><a href="javascript:;">log out</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="container">
+            <div class="row">
+                <div class="left-area">
+                    <div class="text-area">
+                        <h2>today</h2>
+                        <form action="">
+                            <span class="textarea">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</span>
+                            <div class="text-buttons">
+                                <a href="javascript:;" class="edit">edit</a>
+                                <a href="javascript:;" class="save">save</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="calendar-area">
+                        <div class="prev-btn">
+                            <button type="button" class="prev"></button>
+                        </div>
+                        <div class="calendar">
+                            <input type="text" name="date" class="datepicker">
+                        </div>
+                        <div class="next-btn">
+                            <button type="button" class="next"></button>
+                        </div>
+                    </div>
+                    <div class="days">
+                        <ul>
+                            <li><a href="javascript:;" class="active">daily</a></li>
+                            <li><a href="javascript:;">weekly</a></li>
+                            <li><a href="javascript:;">monthly</a></li>
+                            <li><a href="javascript:;">yearly</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-area">
+                    <div class="right-graphs">
+                        <ul class="tabs">
+                            <li class="active"><span>gender</span></li>
+                            <li><span>generation</span></li>
+                        </ul>
+                        <div class="tab-contents">
+                            <div class="tab-content active">
+                                <div class="graph">
+                                    <canvas id="gender"></canvas>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div class="graph">
+                                    <canvas id="generation"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="general-graphs">
+                <ul class="tabs">
+                    <li class="active"><span>visitors</span></li>
+                    <li><span>foreigner</span></li>
+                    <li><span>more than one</span></li>
+                    <li><span>sign up</span></li>
+                    <li><span>peak zone</span></li>
+                    <li><span>peak ap</span></li>
+                </ul>
+                <div class="tab-contents">
+                    <div class="tab-content active">
+                        <div class="graph">
+                            <canvas id="visitors"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="graph">
+                            <canvas id="foreigner"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="graph">
+                            <canvas id="more_than_one"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="graph">
+                            <canvas id="sign_up"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="graph">
+                            <canvas id="peak_zone"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="graph">
+                            <canvas id="peak_ap"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/Chart.min.js"></script>
+    <script type="text/javascript" src="assets/js/analytics.js"></script>
+
+    <script>
+    </script>
+</body>
+
+</html>

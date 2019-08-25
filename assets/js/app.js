@@ -1,99 +1,11 @@
-var slideSpeed = 300;
-
-
-var currentTop = 0;
-
-var swiper = new Swiper('.swiper-container', {
-    direction: 'vertical',
-    slidesPerView: 6,
-    centeredSlides: true,
-    loop: true,
-    slideToClickedSlide: true,
-    centerInsufficientSlides: true,
-    nested: true,
-    height: 420,
-    spaceBetween: 10,
-    on: {
-        click: function(e) {
-            currentTop = e.screenY;
-        }
-    }
-});
-
-var swiperNested = new Swiper('.swiper-container-nested', {
-    direction: 'vertical',
-    slidesPerView: 4,
-    centeredSlides: true,
-    loop: true,
-    slideToClickedSlide: true,
-    centerInsufficientSlides: true,
-    height: 260,
-    spaceBetween: 15,
-    on: {
-        click: function(e) {
-            currentTop += e.screenY;
-            $('.section.content .right-area .right-area-container.active .section-connector').css('top', currentTop + 'px !important');
-        }
-    }
-});
-
 $(function() {
 
-
-    $('.accordion-contents .item .header').click(function() {
-
-        var item = $(this).parent('.item');
-        var currentActive = $('.accordion-contents .item.active');
-
-        $(currentActive).children('.content').slideUp(300);
-
-        $('.accordion-contents .item').removeClass('active');
-        if ($(currentActive).index() !== $(item).index()) {
-            $(item).children('.content').slideDown(slideSpeed);
-            $(item).addClass('active');
-        }
-    })
-
-    // $('.slick-carousel').slick({
-    //     infinite: true,
-    //     vertical: true,
-    //     verticalSwiping: true,
-    //     slidesToShow: 6,
-    //     arrows: false,
-    //     centerMode: true,
-    //     focusOnSelect: true
-    // });
-
-
-    $(".close-right-area").on('click', function(e) {
-        closeRightArea();
-    });
-
-    $(".slider-item-contents").on('click', '.data-item', function(e) {
-        var accordionContentId = $(this).data('accordion-content');
-        initRightAreaContent(accordionContentId);
-    });
-
-    $('.main-data-list').on('click', '.item-content', function(e) {
-
-        if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-        } else {
-            $('.main-data-list .item-content').removeClass('active');
-            $(this).addClass('active');
-        }
-
-        closeRightArea();
-
-        var passiveSlide = $('.main-data-list .swiper-slide:not(.swiper-slide-active)');
-        $(passiveSlide).find('.item-content-detail').hide();
-        $(passiveSlide).find('.slider-item-contents').hide();
-
-        var slideClicked = $('.main-data-list').find(".swiper-slide.swiper-slide-active");
-        $(slideClicked).children('.item-content-detail').slideToggle(slideSpeed, function() {
-            $(slideClicked).find('.slider-item-contents').fadeIn(slideSpeed);
-        });
-    });
+    var top = $('.menu-item.active').position().top;
+    if ($('.menu-item.active').index() == 0) {
+        $('.hover-slide').css('top', top - 43);
+    } else {
+        $('.hover-slide').css('top', top - 11);
+    }
 
     $('.menu-item').hover(function() {
         var top = $(this).position().top - 11;
@@ -132,7 +44,7 @@ $(function() {
         $('span.textarea').text(span_value);
     });
 
-    $(".datepicker").datepicker({
+    var datePicker = $(".datepicker").datepicker({
         dateFormat: "dd.mm.yy",
         beforeShow: function(input, inst) {
             setTimeout(function() {
@@ -145,10 +57,17 @@ $(function() {
         }
     }).datepicker('setDate', new Date());
 
+    $('.wrapper').scroll(function() {
+        var dateInputPosition = $(datePicker[0]).offset().top;
+        $('.ui-datepicker').css({
+            top: dateInputPosition + 40,
+        });
+    });
+
     $(window).resize(function() {
         $('.ui-datepicker').css({
             width: $('.calendar-area').outerWidth(),
-            marginTop: $(".datepicker").offsetHeight - 20,
+            top: $(".datepicker").offsetHeight - 20,
             left: $('.calendar-area').offset().left
         });
     });
@@ -187,23 +106,4 @@ function getNewDate(period, operator) {
     }
 
     return date;
-}
-
-function closeRightArea() {
-    $('.right-area-container').removeClass('active');
-    $('.right-area-container .button-area').removeClass('active');
-    $('.right-area-container .accordion-contents').removeClass('active');
-}
-
-function initRightAreaContent(accordionContentId) {
-
-    $('.right-area-container').addClass('active');
-    $('.right-area-container .button-area').addClass('active');
-    $('.right-area-container .accordion-contents.active .item.active .content').slideUp(slideSpeed);
-    $('.right-area-container .accordion-contents.active .item').removeClass('active');
-    $('.right-area-container .accordion-contents').removeClass('active');
-    $('.right-area-container .accordion-contents#' + accordionContentId).addClass('active');
-
-    var offsetValue = $('.swiper-container-nested .swiper-slide-active').offset();
-
 }

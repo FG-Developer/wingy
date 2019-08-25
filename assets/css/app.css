@@ -29,12 +29,13 @@ a {
 }
 
 .wrapper {
-    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
 
 nav {
     float: left;
-    max-width: 219px;
     position: relative;
     width: 20%;
 }
@@ -70,18 +71,14 @@ nav .brand-logo-area img {
 
 nav .menu {
     background: url('../img/sidebar-bg.png');
-    padding-bottom: 80px;
     position: relative;
-    height: calc(100% - 174px);
-    width: 100%;
-    min-width: 219px;
+    height: 100vh;
+    width: 219px;
 }
 
 nav .menu ul {
     margin: 0 0 0 60px;
     padding: 0;
-    position: absolute;
-    width: 71%;
 }
 
 nav .menu ul li {
@@ -95,7 +92,6 @@ nav .menu .hover-slide {
     background: url('../img/menu-hover-effect.png') right center no-repeat;
     position: absolute;
     left: 45px;
-    top: -43px;
     transition: top .5s ease;
 }
 
@@ -149,30 +145,35 @@ nav .menu ul li.log-out a:hover {
     color: #434343;
 }
 
-section.content {
+section.container {
     height: auto;
-    margin-left: 7%;
-    margin-top: 80px;
-    display: flex;
+    padding: 5% 0 0 2%;
     width: 80%;
+    float: left;
+    box-sizing: border-box;
 }
 
-section.content .left-area {
+section.container .row {
+    display: flex;
+}
+
+section.container .left-area {
     width: 50%;
+    padding: 0 2%;
 }
 
-section.content .left-area .text-area h2 {
+section.container .left-area .text-area h2 {
     font-size: 3.5em;
     margin: 0;
 }
 
-section.content .left-area .text-area span {
+section.container .left-area .text-area span {
     font-size: 1em;
     width: 100%;
     display: block;
 }
 
-section.content .left-area .text-area span.textarea textarea.comment {
+section.container .left-area .text-area span.textarea textarea.comment {
     border: none;
     width: 100%;
     height: 100px;
@@ -180,56 +181,56 @@ section.content .left-area .text-area span.textarea textarea.comment {
     font-size: 1em;
 }
 
-section.content .left-area .text-area .text-buttons {
+section.container .left-area .text-area .text-buttons {
     display: inline-block;
     width: 100%;
     margin-top: 10px;
 }
 
-section.content .left-area .text-area .text-buttons a {
+section.container .left-area .text-area .text-buttons a {
     color: #8fa3aa;
 }
 
-section.content .left-area .text-area .text-buttons a.active,
-section.content .left-area .text-area .text-buttons a:hover {
+section.container .left-area .text-area .text-buttons a.active,
+section.container .left-area .text-area .text-buttons a:hover {
     color: #434343;
 }
 
-section.content .left-area .text-area .edit {
+section.container .left-area .text-area .edit {
     float: left;
 }
 
-section.content .left-area .text-area .save {
+section.container .left-area .text-area .save {
     float: right;
 }
 
-section.content .left-area .calendar-area {
+section.container .left-area .calendar-area {
     clear: both;
     padding-top: 25px;
     display: flex;
 }
 
-section.content .left-area .calendar-area button {
+section.container .left-area .calendar-area button {
     width: 25px;
     height: 42px;
     background: transparent;
     border: none;
 }
 
-section.content .left-area .calendar-area button.prev {
+section.container .left-area .calendar-area button.prev {
     background: url('../img/left-arrow-icon.png');
 }
 
-section.content .left-area .calendar-area button.next {
+section.container .left-area .calendar-area button.next {
     background: url('../img/right-arrow-icon.png');
 }
 
-section.content .left-area .calendar {
+section.container .left-area .calendar {
     width: 80%;
     margin: 0 20%;
 }
 
-section.content .left-area .calendar input.datepicker {
+section.container .left-area .calendar input.datepicker {
     width: 100%;
     height: 40px;
     border-radius: 20px;
@@ -244,50 +245,50 @@ section.content .left-area .calendar input.datepicker {
     box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
 }
 
-section.content .left-area .calendar input.datepicker:focus {
+section.container .left-area .calendar input.datepicker:focus {
     background-color: #ffea00;
 }
 
-section.content .left-area .days ul {
+section.container .left-area .days ul {
     margin: 20px auto 0 auto;
     width: 100%;
     text-align: center;
     padding: 0;
 }
 
-section.content .left-area .days ul li {
+section.container .left-area .days ul li {
     list-style: none;
     display: inline-block;
     margin-right: 8%;
 }
 
-section.content .left-area .days ul li:last-child {
+section.container .left-area .days ul li:last-child {
     margin-right: 0;
 }
 
-section.content .left-area .days ul li a {
+section.container .left-area .days ul li a {
     font-size: 1.5em;
     color: #8fa3aa;
 }
 
-section.content .left-area .days ul li a.active {
-    color: #434343;
-    font-size: 2m;
-}
-
-section.content .left-area .days ul li a:hover {
+section.container .left-area .days ul li a.active {
     color: #434343;
     font-size: 2em;
 }
 
-section.content .left-area .main-data-list {
+section.container .left-area .days ul li a:hover {
+    color: #434343;
+    font-size: 2em;
+}
+
+section.container .left-area .main-data-list {
     height: 569px;
     width: 100%;
     margin-top: 30px;
     overflow-y: hidden;
 }
 
-section.content .left-area .main-data-list div.item {
+section.container .left-area .main-data-list div.item {
     width: 96% !important;
     margin: 0 2%;
     border-radius: 10px;
@@ -302,15 +303,15 @@ section.content .left-area .main-data-list div.item {
     cursor: pointer;
 }
 
-section.content .left-area .main-data-list div.item .item-content {
+section.container .left-area .main-data-list div.item .item-content {
     display: flex;
 }
 
-section.content .left-area .main-data-list div.item .item-content span {
+section.container .left-area .main-data-list div.item .item-content span {
     transition: all .3s ease-in;
 }
 
-section.content .left-area .main-data-list div.item .item-content.active span {
+section.container .left-area .main-data-list div.item .item-content.active span {
     z-index: 3;
     color: inherit;
     filter: brightness(0) invert(0);
@@ -318,13 +319,13 @@ section.content .left-area .main-data-list div.item .item-content.active span {
     -moz-filter: brightness(0) invert(0);
 }
 
-section.content .left-area .main-data-list div.item span.title {
+section.container .left-area .main-data-list div.item span.title {
     width: 40%;
     font-size: 1.5em;
     padding-left: 5%;
 }
 
-section.content .left-area .main-data-list div.item span.number {
+section.container .left-area .main-data-list div.item span.number {
     font-size: 2em;
     color: #1daee4;
     width: 15%;
@@ -332,17 +333,19 @@ section.content .left-area .main-data-list div.item span.number {
     margin-right: 5%;
 }
 
-section.content .left-area .main-data-list div.item span.chart {
+section.container .left-area .main-data-list div.item span.chart {
     width: 30%;
     padding-right: 2%;
 }
 
-section.content .left-area .main-data-list div.item span.chart img {
-    width: 150px;
-    margin-top: 5px;
+section.container .left-area .main-data-list div.item span.chart img {
+    margin-top: 10px;
+    width: 132px;
+    height: 40px;
+    float: right;
 }
 
-section.content .left-area .main-data-list div.item .item-content-detail {
+section.container .left-area .main-data-list div.item .item-content-detail {
     display: none;
     width: 100%;
     height: 333px;
@@ -351,17 +354,17 @@ section.content .left-area .main-data-list div.item .item-content-detail {
     background: linear-gradient(-58deg, rgba(247, 183, 14, 1) 0%, rgba(255, 234, 0, 1) 100%);
     position: absolute;
     z-index: 1;
-    top: 0;
+    top: -1px;
     overflow: hidden;
     padding-top: 60px;
 }
 
-section.content .left-area .main-data-list div.item .item-content-detail .slider-item-contents {
+section.container .left-area .main-data-list div.item .item-content-detail .slider-item-contents {
     display: none;
     width: 100%;
 }
 
-section.content .left-area .main-data-list div.item .item-content-detail .slider-item-contents .data-item {
+section.container .left-area .main-data-list div.item .item-content-detail .slider-item-contents .data-item {
     width: 92% !important;
     margin: 0 auto;
     border-radius: 50px;
@@ -371,17 +374,19 @@ section.content .left-area .main-data-list div.item .item-content-detail .slider
     transition: all 3s ease;
 }
 
-section.content .left-area .main-data-list div.item .item-content-detail .slider-item-contents .data-item span.number {
+section.container .left-area .main-data-list div.item .item-content-detail .slider-item-contents .data-item span.number {
     width: 60%;
     float: right;
     text-align: right;
 }
 
-section.content .right-area {
+section.container .right-area {
     width: 50%;
+    padding: 0 2%;
+    margin-top: 10%;
 }
 
-section.content .right-area .right-area-container {
+section.container .right-area .right-area-container {
     width: 90%;
     float: right;
     background: #fff;
@@ -396,21 +401,21 @@ section.content .right-area .right-area-container {
     position: relative;
 }
 
-section.content .right-area .right-area-container .section-connector {
+section.container .right-area .right-area-container .section-connector {
     display: none;
     position: absolute;
     left: -64px;
     top: 563px;
     background: url('../img/section-connector.png') no-repeat;
     width: 90px;
-    height: 400px;
+    height: 270px;
 }
 
-section.content .right-area .right-area-container.active .section-connector {
+section.container .right-area .right-area-container.active .section-connector {
     display: block;
 }
 
-section.content .right-area .right-area-container .section-connector:after {
+section.container .right-area .right-area-container .section-connector:after {
     position: absolute;
     right: 0;
     top: 103px;
@@ -421,11 +426,11 @@ section.content .right-area .right-area-container .section-connector:after {
     z-index: 89;
 }
 
-section.content .right-area .right-area-container.active {
-    right: 0;
+section.container .right-area .right-area-container.active {
+    right: -4.2%;
 }
 
-section.content .right-area .right-area-container img {
+section.container .right-area .right-area-container img {
     position: absolute;
     right: 15px;
     top: -13px;
@@ -433,18 +438,18 @@ section.content .right-area .right-area-container img {
     width: 70px;
 }
 
-section.content .right-area .right-area-container .button-area {
+section.container .right-area .right-area-container .button-area {
     display: flex;
     margin: 40px 0 20px 10px;
     transition: all 1s ease-in-out;
     opacity: 0;
 }
 
-section.content .right-area .right-area-container .button-area.active {
+section.container .right-area .right-area-container .button-area.active {
     opacity: 1;
 }
 
-section.content .right-area .right-area-container .button-area button {
+section.container .right-area .right-area-container .button-area button {
     width: 25%;
     height: 40px;
     border-radius: 10px;
@@ -455,7 +460,7 @@ section.content .right-area .right-area-container .button-area button {
     font-size: .8em;
 }
 
-section.content .right-area .right-area-container .accordion-contents {
+section.container .right-area .right-area-container .accordion-contents {
     display: inherit;
     width: 90%;
     margin: 20px auto;
@@ -470,17 +475,17 @@ section.content .right-area .right-area-container .accordion-contents {
     opacity: 0;
 }
 
-section.content .right-area .right-area-container .accordion-contents.active {
+section.container .right-area .right-area-container .accordion-contents.active {
     transition-delay: .1s;
     left: 0;
     opacity: 1;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item:first-child {
+section.container .right-area .right-area-container .accordion-contents .item:first-child {
     margin-top: 0;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item {
+section.container .right-area .right-area-container .accordion-contents .item {
     padding: 15px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -493,90 +498,217 @@ section.content .right-area .right-area-container .accordion-contents .item {
     margin: -10px auto 0 auto;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item.active {
+section.container .right-area .right-area-container .accordion-contents .item.active {
     background: rgb(247, 183, 14);
     background: linear-gradient(-58deg, rgba(247, 183, 14, 1) 0%, rgba(255, 234, 0, 1) 100%);
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content {
+section.container .right-area .right-area-container .accordion-contents .item .content {
     display: none;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .header {
+section.container .right-area .right-area-container .accordion-contents .item .header {
     cursor: pointer;
     padding-bottom: 10px;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .header .row {
+section.container .right-area .right-area-container .accordion-contents .item .header .row {
     display: flex;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .header .row .col {
+section.container .right-area .right-area-container .accordion-contents .item .header .row .col {
     width: 16.6%;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .header .col.name {
+section.container .right-area .right-area-container .accordion-contents .item .header .col.name {
     width: 50%;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .header .col.country,
-section.content .right-area .right-area-container .accordion-contents .item .header .col.number,
-section.content .right-area .right-area-container .accordion-contents .item .content {
+section.container .right-area .right-area-container .accordion-contents .item .header .col.country,
+section.container .right-area .right-area-container .accordion-contents .item .header .col.number,
+section.container .right-area .right-area-container .accordion-contents .item .content {
     font-size: .8em;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .header .col.number {
+section.container .right-area .right-area-container .accordion-contents .item .header .col.number {
     width: 67%;
     text-align: right;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .row {
+section.container .right-area .right-area-container .accordion-contents .item .content .row {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 10px;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .row.np {
+section.container .right-area .right-area-container .accordion-contents .item .content .row.np {
     padding: 0 0 15px 0;
     margin-top: -40px;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .row.bt {
+section.container .right-area .right-area-container .accordion-contents .item .content .row.bt {
     border-top: 1px solid rgba(16, 15, 13, .2);
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .row .col {
+section.container .right-area .right-area-container .accordion-contents .item .content .row .col {
     width: 16.6%;
     padding-top: 10px;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .row.header-row .col {
+section.container .right-area .right-area-container .accordion-contents .item .content .row.header-row .col {
     width: 20.8%;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .row.header-row .col .value {
+section.container .right-area .right-area-container .accordion-contents .item .content .row.header-row .col .value {
     font-size: 1.2em
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .row .col.icon {
+section.container .right-area .right-area-container .accordion-contents .item .content .row .col.icon {
     height: 50px;
     margin-top: 17px;
     width: 16.6%;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .row .col.icon.women {
+section.container .right-area .right-area-container .accordion-contents .item .content .row .col.icon.women {
     background: url('../img/women-icon.png') no-repeat;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .row .col.icon.man {
+section.container .right-area .right-area-container .accordion-contents .item .content .row .col.icon.man {
     background: url('../img/man-icon.png') no-repeat;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .date {
+section.container .right-area .right-area-container .accordion-contents .item .content .date {
     text-align: right;
     flex: auto;
 }
 
-section.content .right-area .right-area-container .accordion-contents .item .content .row .col .key {
+section.container .right-area .right-area-container .accordion-contents .item .content .row .col .key {
     opacity: .5;
+}
+
+section.container .right-area .right-graphs {
+    position: relative;
+    height: auto;
+}
+
+.tabs {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.tabs li {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-right: 10px;
+    background: white;
+    width: 160px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.tabs li span {
+    font-size: 1.2em;
+    width: 80%;
+    margin: 10% auto;
+    border-radius: 8px;
+    text-align: center;
+    display: block;
+    transition: background .2s ease;
+    height: 50px;
+    line-height: 50px;
+    background: #f5f7f8;
+}
+
+.tabs li.active span {
+    background: #ffea00;
+}
+
+.tab-contents {
+    padding-top: 30px;
+    background: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content .graph {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.tab-content.active .graph {
+    opacity: 1;
+}
+
+.general-graphs {
+    padding: 5% 2% 0 2%;
+    overflow-x: scroll
+}
+
+.general-graphs .tabs {
+    align-items: center;
+    justify-content: center;
+    min-width: 900px;
+}
+
+.general-graphs .tab-contents {
+    min-width: 900px;
+}
+
+.general-graphs .tabs li {
+    width: 13.7%;
+}
+
+.general-graphs .tabs li span {
+    font-size: .9em;
+}
+
+@media screen and (max-width: 1100px) {
+    section.container {
+        padding-left: 10%;
+    }
+    section.container .left-area .calendar {
+        margin: 0 10%;
+    }
+    .ui-datepicker td span,
+    .ui-datepicker td a {
+        width: 40px;
+        height: 40px;
+    }
+    section.container .left-area .days ul li a {
+        font-size: .8em;
+    }
+    section.container .left-area .days ul li a.active {
+        font-size: 1em
+    }
+}
+
+@media screen and (max-width: 940px) {
+    section.container .row {
+        display: block;
+    }
+    section.container .left-area,
+    section.container .right-area {
+        width: 80%;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .right-graphs {
+        margin-top: 80px;
+    }
+    section.container .left-area .days ul li a {
+        font-size: 1.5em;
+    }
+    section.container .left-area .days ul li a.active {
+        font-size: 2em;
+    }
 }
