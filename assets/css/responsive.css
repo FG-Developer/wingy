@@ -1,9 +1,10 @@
 @media screen and (max-width: 1100px) {
     section.container {
-        padding-left: 10%;
+        padding-left: 10% !important;
     }
     section.container .left-area .calendar {
-        margin: 0 10%;
+        width: 80% !important;
+        margin: 0 10% !important;
     }
     .ui-datepicker td span,
     .ui-datepicker td a {
@@ -11,20 +12,78 @@
         height: 40px;
     }
     section.container .left-area .days ul li a {
-        font-size: .8em;
+        font-size: 1em !important;
     }
     section.container .left-area .days ul li a.active {
-        font-size: 1em
+        font-size: 1.2em !important;
+    }
+    section.container .left-area .days ul li a:hover {
+        font-size: 1.2em !important;
+    }
+    .graph-card {
+        margin: auto .3% !important;
     }
 }
 
 @media screen and (max-width: 940px) {
-    section.container .row {
-        display: block;
+    nav {
+        position: absolute !important;
+        transform: translateX(-270px);
+        background: none !important;
+    }
+    nav .brand-logo-area {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    nav .nav-top {
+        height: auto !important;
+        background: none !important;
+    }
+    nav .nav-top .logo {
+        display: none !important;
+    }
+    nav .menu ul {
+        margin-left: 40px !important;
+    }
+    nav .menu ul li.language {
+        margin-top: 40px !important;
+    }
+    nav .menu ul li.menu-item.active a {
+        position: relative !important;
+    }
+    nav .menu ul li.menu-item.active a:before {
+        content: '';
+        position: absolute !important;
+        left: -20px !important;
+        top: -10px !important;
+        width: 90% !important;
+        height: 60px !important;
+        background: #fff !important;
+        border-radius: 20px !important;
+        z-index: -1 !important;
+    }
+    nav .menu {
+        background: none !important;
+    }
+    nav .menu .hover-slide {
+        display: none !important;
+    }
+    nav .menu ul li.log-out {
+        margin-top: 10px !important;
+    }
+    div.mobile {
+        display: block !important;
+    }
+    section.container {
+        width: 97% !important;
+        padding: 0 0 30px 0!important;
+        margin: 0 auto !important;
+        float: none !important;
     }
     section.container .left-area,
     section.container .right-area {
-        width: 80%;
+        width: 100%;
         padding: 0;
         margin: 0 auto;
     }
@@ -32,9 +91,93 @@
         margin-top: 80px;
     }
     section.container .left-area .days ul li a {
-        font-size: 1.5em;
+        font-size: 1.3em !important;
     }
     section.container .left-area .days ul li a.active {
-        font-size: 2em;
+        font-size: 1.8em !important;
+    }
+    section.container .left-area .days ul li a:hover {
+        font-size: 1.8em !important;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .icon img {
+        height: 25px;
+    }
+    section.container .graph-card .row span {
+        font-size: .6em !important;
+    }
+    section.container .graph-card .row span.value {
+        font-size: .9em !important;
+    }
+    section.container .left-area .days ul li a {
+        font-size: 1em !important;
+    }
+    section.container .left-area .days ul li a.active {
+        font-size: 1.2em !important;
+    }
+    section.container .left-area .days ul li a:hover {
+        font-size: 1.2em !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section.container {
+        width: 90% !important;
+    }
+    section.container .row {
+        display: block !important;
+    }
+    section.container .left-area,
+    section.container .right-area {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    section.container .left-area .calendar {
+        width: 80% !important;
+        margin: 0 10% !important;
+    }
+    section.container .card-graphs {
+        padding: 0 !important;
+    }
+    .graph-card {
+        width: auto !important;
+        padding: 1em !important;
+    }
+    section.container .graph-card .row {
+        display: flex !important;
+        justify-content: left !important;
+    }
+    section.container .row.custom .graph-card {
+        margin-top: 1em!important;
+    }
+    section.container .graph-card .row div.icon {
+        margin-left: 0 !important;
+    }
+    .icon img {
+        height: unset;
+    }
+    section.container .graph-card .row span {
+        font-size: 1em !important;
+    }
+    section.container .graph-card .row span.value {
+        font-size: 1.2em !important;
+        text-align: left !important;
+    }
+    section.container .graph-card .content.br-1 {
+        border: none !important;
+    }
+    section.container .left-area .days ul li a {
+        font-size: 1em !important
+    }
+    section.container .left-area .days ul li a.active {
+        font-size: 1.4em !important
+    }
+    section.container .left-area .days ul li a:hover {
+        font-size: 1.4em !important;
+    }
+    .right-graphs {
+        margin-top: 50px;
     }
 }

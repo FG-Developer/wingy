@@ -1,5 +1,9 @@
 $(function() {
 
+    setTimeout(() => {
+        $('nav').height($('.container').outerHeight());
+    }, 100);
+
     var top = $('.menu-item.active').position().top;
     if ($('.menu-item.active').index() == 0) {
         $('.hover-slide').css('top', top - 43);
@@ -13,6 +17,14 @@ $(function() {
             top = -43;
         }
         $('.hover-slide').css('top', top);
+    });
+
+    $('.menu-item').mouseleave(function() {
+        if ($('.menu-item.active').index() == 0) {
+            $('.hover-slide').css('top', top - 43);
+        } else {
+            $('.hover-slide').css('top', top - 11);
+        }
     });
 
     $('.text-buttons a').click(function() {
@@ -85,6 +97,11 @@ $(function() {
 
         $(".datepicker").datepicker('setDate', new_date);
     });
+
+    $('div.mobile').on('click', function() {
+        $('body').toggleClass('mobile');
+    })
+
 });
 
 function getNewDate(period, operator) {
