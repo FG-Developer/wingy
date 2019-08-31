@@ -2,11 +2,12 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <title>VINGY ANALYTICS</title>
+    <title>VINGY | AP EDIT</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/js/plugins/jquery-ui/jquery-ui.min.css">
+
 </head>
 
 <body>
@@ -31,9 +32,9 @@
                 <div class="hover-slide"></div>
                 <ul>
                     <li class="menu-item"><a href="index.html">main</a></li>
-                    <li class="menu-item active"><a href="analytics.html">analytics</a></li>
+                    <li class="menu-item"><a href="analytics.html">analytics</a></li>
                     <li class="menu-item"><a href="cmx.html">cmx</a></li>
-                    <li class="menu-item"><a href="ap-edit.html">ap edit</a></li>
+                    <li class="menu-item active"><a href="ap-edit.html">ap edit</a></li>
                     <li class="menu-item"><a href="javascript:;">picture</a></li>
                     <li class="language"><a href="javascript:;">tr</a> - <a href="javascript:;" class="active">en</a></li>
                     <li class="log-out"><a href="javascript:;">log out</a></li>
@@ -75,66 +76,47 @@
                         </div>
                     </div>
                     <div class="right-area">
-                        <div class="right-graphs">
-                            <ul class="tabs">
-                                <li class="active"><span>gender</span></li>
-                                <li><span>generation</span></li>
-                            </ul>
-                            <div class="tab-contents">
-                                <div class="tab-content active">
-                                    <div class="graph">
-                                        <canvas id="gender" height="100"></canvas>
-                                    </div>
-                                </div>
-                                <div class="tab-content">
-                                    <div class="graph">
-                                        <canvas id="generation" height="100"></canvas>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row">
+                            <select name="zone" id="zone" class="custom-select">
+                                <option value="">select zone</option>
+                                <option value="zone-chart-1.jpg">Zone 1</option>
+                                <option value="zone-chart-1.jpg">Zone 2</option>
+                                <option value="zone-chart-3.jpg">Zone 3</option>
+                            </select>
                         </div>
                     </div>
                 </div>
 
                 <div class="general-graphs">
+
                     <ul class="tabs">
-                        <li class="active"><span>visitors</span></li>
-                        <li><span>foreigner</span></li>
-                        <li><span>more than one</span></li>
-                        <li><span>sign up</span></li>
-                        <li><span>peak zone</span></li>
-                        <li><span>peak ap</span></li>
+                        <li style="margin-left: 1%;" class="all-areas active"><span>all areas</span></li>
+                        <li style="margin-left: 45%;" class="edit-image"><span>edit image</span></li>
+                        <li class="edit-area"><span>edit area</span></li>
                     </ul>
-                    <div class="tab-contents">
-                        <div class="tab-content active">
-                            <div class="graph">
-                                <canvas id="visitors"></canvas>
+                    <div class="tab-contents p-0 mb-2">
+                        <div class="tab-close">
+                            <img src="assets/img/close-btn-icon.png" alt="">
+                        </div>
+                        <div class="zoom-icons">
+                            <a href="javascript:;" id="zoom-in"><img src="assets/img/zoom-in-icon.png" alt=""></a>
+                            <a href="javascript:;" id="zoom-out"><img src="assets/img/zoom-out-icon.png" alt=""></a>
+                        </div>
+
+                        <div class="tab-content active p-0">
+                            <div class="graph area-chart">
+                                <img class="area-chart-img" src="assets/img/zone-chart-1.jpg" alt="Chart 1">
                             </div>
                         </div>
-                        <div class="tab-content">
-                            <div class="graph">
-                                <canvas id="foreigner"></canvas>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="graph">
-                                <canvas id="more_than_one"></canvas>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="graph">
-                                <canvas id="sign_up"></canvas>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="graph">
-                                <canvas id="peak_zone"></canvas>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="graph">
-                                <canvas id="peak_ap"></canvas>
-                            </div>
+
+                        <div class="edit-image-container">
+                            <select name="select-image" id="select-image" class="custom-select">
+                                <option value="zone-chart-1.jpg">Zone 1</option>
+                                <option value="zone-chart-1.jpg">Zone 2</option>
+                                <option value="zone-chart-3.jpg">Zone 3</option>
+                            </select>
+                            <button class="btn delete">delete</button>
+                            <button class="btn save">save</button>
                         </div>
                     </div>
                 </div>
@@ -147,11 +129,9 @@
     <script type="text/javascript" src="assets/js/app.js"></script>
 
     <!-- PAGE PLUGINS -->
-    <script type="text/javascript" src="assets/js/plugins/Chart.min.js"></script>
-    <script type="text/javascript" src="assets/js/analytics.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/wheel-zoom.js"></script>
+    <script type="text/javascript" src="assets/js/ap-edit.js"></script>
 
-    <script>
-    </script>
 </body>
 
 </html>

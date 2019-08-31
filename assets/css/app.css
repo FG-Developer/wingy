@@ -1,5 +1,5 @@
 @import url('./font.css');
-@import url('./datepicker.css');
+@import url('./plugins/datepicker.css');
 @import url('./responsive.css');
 html,
 body {
@@ -25,7 +25,7 @@ body.mobile {
     overflow: hidden;
 }
 
- :focus {
+:focus {
     outline: none;
 }
 
@@ -250,6 +250,10 @@ body.mobile section.container div.container-area {
 
 .col {
     width: 6.25%;
+}
+
+.p-0 {
+    padding: 0 !important;
 }
 
 .p-1 {
@@ -790,6 +794,61 @@ section.container .right-area .right-graphs {
     width: 160px;
     cursor: pointer;
     height: 50px;
+    z-index: 1;
+}
+
+.tab-contents {
+    padding-top: 30px;
+    background: white;
+    border-radius: 10px;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content .graph {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.tab-content .graph.area-chart {
+    width: 100%;
+    height: 400px !important;
+}
+
+.tab-content.active .graph {
+    opacity: 1;
+    overflow: scroll;
+}
+
+.general-graphs {
+    padding: 5% 2% 0 2%;
+    overflow-x: scroll
+}
+
+.general-graphs .tabs {
+    align-items: center;
+    justify-content: center;
+    min-width: 900px;
+}
+
+.general-graphs .tab-contents {
+    min-width: 900px;
+    position: relative;
+}
+
+.general-graphs .tabs li {
+    width: 13.7%;
+}
+
+.general-graphs .tabs li span {
+    font-size: .9em;
 }
 
 .tabs li span {
@@ -807,52 +866,6 @@ section.container .right-area .right-graphs {
 
 .tabs li.active span {
     background: #ffea00;
-}
-
-.tab-contents {
-    padding-top: 30px;
-    background: white;
-}
-
-.tab-content {
-    display: none;
-    padding: 20px;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-.tab-content .graph {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-.tab-content.active .graph {
-    opacity: 1;
-}
-
-.general-graphs {
-    padding: 5% 2% 0 2%;
-    overflow-x: scroll
-}
-
-.general-graphs .tabs {
-    align-items: center;
-    justify-content: center;
-    min-width: 900px;
-}
-
-.general-graphs .tab-contents {
-    min-width: 900px;
-}
-
-.general-graphs .tabs li {
-    width: 13.7%;
-}
-
-.general-graphs .tabs li span {
-    font-size: .9em;
 }
 
 #chartjs-tooltip {
@@ -1001,4 +1014,92 @@ section.container .graph-card .row div.icon span.active {
     margin: 0 auto;
     background: linear-gradient(-180deg, rgba(207, 209, 210, .6) 0%, rgba(255, 255, 255, .5) 60%, rgba(255, 255, 255, .0) 100%);
     z-index: 2;
+}
+
+.custom-select {
+    position: relative;
+    border: 0;
+    width: 400px;
+    height: 60px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../img/selectbox-icon.png) #fff;
+    background-repeat: no-repeat;
+    background-position: 337px -5px;
+    background-size: 63px 72px;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-size: 1.2em;
+    margin: 90px auto 0 auto;
+    color: #434343;
+    display: block;
+}
+
+
+/* For IE10 */
+
+.custom-select::-ms-expand {
+    display: none;
+}
+
+.area-chart-img {
+    /* width: 100%; */
+    margin-top: 0 !important;
+}
+
+.zoom-icons {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+
+.zoom-icons a {
+    display: block;
+}
+
+.edit-image-container {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.edit-image-container .custom-select {
+    margin: 0 0 20px 0;
+    width: 270px;
+    background-position-x: 208px;
+    height: 50px;
+    background-position-y: -11px;
+}
+
+.btn {
+    width: 130px;
+    height: 50px;
+    text-align: center;
+    border-radius: 25px;
+    border: none;
+    font-size: 1.1em;
+    color: inherit;
+}
+
+.btn.delete {
+    color: white;
+    background: #fa3609;
+    background: linear-gradient(-90deg, #ff0000 0%, #fa3609 100%);
+}
+
+.btn.save {
+    margin-left: 7px;
+    background: #fac709;
+    background: linear-gradient(-90deg, #ffea00 0%, #fac709 100%);
+}
+
+.tab-close {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+
+.tab-close img {
+    width: 40px
 }

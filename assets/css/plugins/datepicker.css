@@ -32,7 +32,7 @@ html .ui-button.ui-state-disabled:active {
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-    background: url('../img/calendar-circle.png') !important;
+    background: url('../../img/calendar-circle.png') !important;
     background-position: center center;
     background-size: cover !important;
 }
@@ -45,7 +45,7 @@ html .ui-button.ui-state-disabled:active {
 .ui-widget-header .ui-state-focus,
 .ui-button:hover,
 .ui-button:focus {
-    background: url('../img/calendar-circle.png') !important;
+    background: url('../../img/calendar-circle.png') !important;
     background-position: center center;
     background-size: cover !important;
 }
@@ -74,7 +74,7 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .ui-widget-header .ui-icon {
-    background-image: url('../img/calendar-left-arrow-icon.png') !important;
+    background-image: url('../../img/calendar-left-arrow-icon.png') !important;
     background-position: center;
     width: 14px;
     height: 23px;
@@ -84,7 +84,7 @@ html .ui-button.ui-state-disabled:active {
 .ui-state-focus .ui-icon,
 .ui-button:hover .ui-icon,
 .ui-button:focus .ui-icon {
-    background-image: url('../img/calendar-left-arrow-icon.png') !important;
+    background-image: url('../../img/calendar-left-arrow-icon.png') !important;
     background-position: center;
     width: 14px;
     height: 23px;

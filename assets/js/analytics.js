@@ -32,6 +32,7 @@ var randomScalingFactor = function(count) {
 };
 
 var initLineChart = function(id) {
+
     var visitorsChartItem = document.getElementById(id).getContext('2d');
 
     var gradientFill = visitorsChartItem.createLinearGradient(500, 0, 100, 0);
@@ -87,7 +88,6 @@ var initLineChart = function(id) {
                     } else {
                         tooltipEl.classList.add('no-transform');
                     }
-
 
                     function getBody(bodyItem) {
                         return bodyItem.lines;

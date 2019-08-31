@@ -100,8 +100,7 @@ $(function() {
 
     $('div.mobile').on('click', function() {
         $('body').toggleClass('mobile');
-    })
-
+    });
 });
 
 function getNewDate(period, operator) {
