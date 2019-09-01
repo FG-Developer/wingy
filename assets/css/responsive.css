@@ -1,4 +1,13 @@
+@media screen and (max-width: 1300px) {
+    .custom-select {
+        margin-top: 16% !important;
+    }
+}
+
 @media screen and (max-width: 1100px) {
+    .custom-select {
+        margin-top: 25% !important;
+    }
     section.container {
         padding-left: 10% !important;
     }
@@ -26,6 +35,12 @@
 }
 
 @media screen and (max-width: 940px) {
+    .custom-select {
+        margin-top: 28% !important;
+    }
+    section.container {
+        padding-left: 10% !important;
+    }
     nav {
         position: absolute !important;
         transform: translateX(-270px);
@@ -102,6 +117,15 @@
 }
 
 @media screen and (max-width: 780px) {
+    nav .brand-logo-area {
+        margin-top: 0 !important;
+    }
+    .general-graphs .tabs {
+        justify-content: left !important;
+    }
+    .general-graphs .tabs li {
+        margin-left: 0 !important;
+    }
     .icon img {
         height: 25px;
     }
@@ -123,6 +147,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    .custom-select {
+        margin-top: 3% !important;
+    }
     section.container {
         width: 90% !important;
     }
@@ -169,13 +196,13 @@
         border: none !important;
     }
     section.container .left-area .days ul li a {
-        font-size: 1em !important
+        font-size: 1.2em !important
     }
     section.container .left-area .days ul li a.active {
-        font-size: 1.4em !important
+        font-size: 1.5em !important
     }
     section.container .left-area .days ul li a:hover {
-        font-size: 1.4em !important;
+        font-size: 1.5em !important;
     }
     .right-graphs {
         margin-top: 50px;

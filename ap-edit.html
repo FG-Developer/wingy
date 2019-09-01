@@ -26,7 +26,11 @@
                 <div class="logo">
                     <img src="assets/img/logo.png" alt="VINGY">
                 </div>
-                <div class="brand-logo-area"><img src="assets/img/brand-logo.png"></div>
+                <div class="brand-logo-area">
+                    <img src="assets/img/brand-logo.png" class="brand-logo">
+                    <input type="file" name="brand-logo" id="brand-logo" style="display: none;">
+                    <div class="change-brand-logo"></div>
+                </div>
             </div>
             <div class="menu">
                 <div class="hover-slide"></div>
@@ -35,7 +39,7 @@
                     <li class="menu-item"><a href="analytics.html">analytics</a></li>
                     <li class="menu-item"><a href="cmx.html">cmx</a></li>
                     <li class="menu-item active"><a href="ap-edit.html">ap edit</a></li>
-                    <li class="menu-item"><a href="javascript:;">picture</a></li>
+                    <li class="menu-item"><a href="picture.html">picture</a></li>
                     <li class="language"><a href="javascript:;">tr</a> - <a href="javascript:;" class="active">en</a></li>
                     <li class="log-out"><a href="javascript:;">log out</a></li>
                 </ul>
@@ -109,14 +113,24 @@
                             </div>
                         </div>
 
-                        <div class="edit-image-container">
-                            <select name="select-image" id="select-image" class="custom-select">
-                                <option value="zone-chart-1.jpg">Zone 1</option>
-                                <option value="zone-chart-1.jpg">Zone 2</option>
-                                <option value="zone-chart-3.jpg">Zone 3</option>
-                            </select>
-                            <button class="btn delete">delete</button>
-                            <button class="btn save">save</button>
+                        <div class="edit-image-container form-container">
+                            <form>
+                                <select name="select_image" id="select-image" class="custom-select">
+                                    <option value="zone-chart-1.jpg">Zone 1</option>
+                                    <option value="zone-chart-1.jpg">Zone 2</option>
+                                    <option value="zone-chart-3.jpg">Zone 3</option>
+                                </select>
+                                <button class="btn delete">delete</button>
+                                <button class="btn save">save</button>
+                            </form>
+                        </div>
+
+                        <div class="edit-area-container form-container">
+                            <form>
+                                <input type="text" name="zone_name" placeholder="zone name">
+                                <button class="btn delete">delete</button>
+                                <button class="btn save">save</button>
+                            </form>
                         </div>
                     </div>
                 </div>

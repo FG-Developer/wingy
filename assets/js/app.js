@@ -1,7 +1,33 @@
 $(function() {
 
+    $('.change-brand-logo').on('click', function() {
+        $('#brand-logo').trigger('click');
+    });
+
+    $('#brand-logo').on('change', function() {
+        var preview = $('img.brand-logo');
+        var file = document.querySelector('#brand-logo').files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+            $(preview).attr('src', reader.result);
+            sendFileToServer();
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    })
+
     setTimeout(() => {
-        $('nav').height($('.container').outerHeight());
+        var height = $('.container').outerHeight();
+        var navHeight = $('.nav-top').outerHeight() + $('.menu').outerHeight() + 50;
+        if (height < navHeight) {
+            height = navHeight;
+        }
+        $('nav').height(height);
     }, 100);
 
     var top = $('.menu-item.active').position().top;
@@ -56,33 +82,35 @@ $(function() {
         $('span.textarea').text(span_value);
     });
 
-    var datePicker = $(".datepicker").datepicker({
-        dateFormat: "dd.mm.yy",
-        beforeShow: function(input, inst) {
-            setTimeout(function() {
-                inst.dpDiv.css({
-                    width: $('.calendar-area').outerWidth(),
-                    marginTop: input.offsetHeight - 20,
-                    left: $('.calendar-area').offset().left
+    if ($(".datepicker").length) {
+        var datePicker = $(".datepicker").datepicker({
+            dateFormat: "dd.mm.yy",
+            beforeShow: function(input, inst) {
+                setTimeout(function() {
+                    inst.dpDiv.css({
+                        width: $('.calendar-area').outerWidth(),
+                        marginTop: input.offsetHeight - 20,
+                        left: $('.calendar-area').offset().left
+                    });
                 });
+            }
+        }).datepicker('setDate', new Date());
+
+        $('.wrapper').scroll(function() {
+            var dateInputPosition = $(datePicker[0]).offset().top;
+            $('.ui-datepicker').css({
+                top: dateInputPosition + 40,
             });
-        }
-    }).datepicker('setDate', new Date());
-
-    $('.wrapper').scroll(function() {
-        var dateInputPosition = $(datePicker[0]).offset().top;
-        $('.ui-datepicker').css({
-            top: dateInputPosition + 40,
         });
-    });
 
-    $(window).resize(function() {
-        $('.ui-datepicker').css({
-            width: $('.calendar-area').outerWidth(),
-            top: $(".datepicker").offsetHeight - 20,
-            left: $('.calendar-area').offset().left
+        $(window).resize(function() {
+            $('.ui-datepicker').css({
+                width: $('.calendar-area').outerWidth(),
+                top: $(".datepicker").offsetHeight - 20,
+                left: $('.calendar-area').offset().left
+            });
         });
-    });
+    }
 
     $('button.prev').click(function() {
         var period = $('.days li a.active').text();
@@ -102,6 +130,10 @@ $(function() {
         $('body').toggleClass('mobile');
     });
 });
+
+function sendFileToServer() {
+    // send file to server from here
+}
 
 function getNewDate(period, operator) {
     var operator = operator == 'prev' ? '-' : '+';
