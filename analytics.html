@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <title>VINGY ANALYTICS</title>
+    <title>WINGY ANALYTICS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/app.css">
@@ -19,14 +19,17 @@
                 <span></span>
             </div>
             <div class="close-icon"><img src="assets/img/mobile-menu-close-icon.png" alt="Close"></div>
+            <a href="index.html"><img class="logo" src="assets/img/logo.png" alt="WINGY"></a>
         </div>
         <nav>
             <div class="nav-top">
                 <div class="logo">
-                    <img src="assets/img/logo.png" alt="VINGY">
+                    <a href="index.html"><img src="assets/img/logo.png" alt="WINGY"></a>
                 </div>
                 <div class="brand-logo-area">
-                    <img src="assets/img/brand-logo.png" class="brand-logo">
+                    <div class="brand-logo-container">
+                        <img src="assets/img/brand-logo.png" class="brand-logo">
+                    </div>
                     <input type="file" name="brand-logo" id="brand-logo" style="display: none;">
                     <div class="change-brand-logo"></div>
                 </div>
@@ -87,12 +90,12 @@
                             <div class="tab-contents">
                                 <div class="tab-content active">
                                     <div class="graph">
-                                        <canvas id="gender" height="100"></canvas>
+                                        <div id="gender" height="100"></div>
                                     </div>
                                 </div>
                                 <div class="tab-content">
                                     <div class="graph">
-                                        <canvas id="generation" height="100"></canvas>
+                                        <div id="generation" height="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -112,32 +115,32 @@
                     <div class="tab-contents">
                         <div class="tab-content active">
                             <div class="graph">
-                                <canvas id="visitors"></canvas>
+                                <div id="visitors"></div>
                             </div>
                         </div>
                         <div class="tab-content">
                             <div class="graph">
-                                <canvas id="foreigner"></canvas>
+                                <div id="foreigner"></div>
                             </div>
                         </div>
                         <div class="tab-content">
                             <div class="graph">
-                                <canvas id="more_than_one"></canvas>
+                                <div id="more_than_one"></div>
                             </div>
                         </div>
                         <div class="tab-content">
                             <div class="graph">
-                                <canvas id="sign_up"></canvas>
+                                <div id="sign_up"></div>
                             </div>
                         </div>
                         <div class="tab-content">
                             <div class="graph">
-                                <canvas id="peak_zone"></canvas>
+                                <div id="peak_zone"></div>
                             </div>
                         </div>
                         <div class="tab-content">
                             <div class="graph">
-                                <canvas id="peak_ap"></canvas>
+                                <div id="peak_ap"></div>
                             </div>
                         </div>
                     </div>
@@ -151,7 +154,8 @@
     <script type="text/javascript" src="assets/js/app.js"></script>
 
     <!-- PAGE PLUGINS -->
-    <script type="text/javascript" src="assets/js/plugins/Chart.min.js"></script>
+    <!-- <script type="text/javascript" src="assets/js/plugins/Chart.min.js"></script> -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="assets/js/analytics.js"></script>
 
     <script>

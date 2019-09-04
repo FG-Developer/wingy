@@ -80,6 +80,7 @@
     }
     nav .menu {
         background: none !important;
+        top: 40px;
     }
     nav .menu .hover-slide {
         display: none !important;

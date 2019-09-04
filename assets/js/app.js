@@ -126,8 +126,12 @@ $(function() {
         $(".datepicker").datepicker('setDate', new_date);
     });
 
-    $('div.mobile').on('click', function() {
-        $('body').toggleClass('mobile');
+    $('div.mobile .menu-items').on('click', function() {
+        $('body').addClass('mobile');
+    });
+
+    $('div.mobile .close-icon').on('click', function() {
+        $('body').removeClass('mobile');
     });
 });
 

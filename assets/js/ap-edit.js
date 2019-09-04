@@ -35,5 +35,11 @@ $(function() {
     $('.tab-close').on('click', function() {
         $(this).hide();
         $('.form-container').hide();
+    });
+
+    $('#zone').on('change', function() {
+        var currentVal = $(this).val();
+
+        $('.area-chart-img').attr('src', 'assets/img/' + currentVal);
     })
 });
