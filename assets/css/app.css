@@ -144,6 +144,7 @@ body.mobile .wrapper {
 .wrapper {
     width: 100%;
     height: auto;
+    min-height: 100%;
     display: flex;
 }
 
@@ -188,7 +189,7 @@ nav .brand-logo-area {
     align-items: center;
 }
 
-nav .brand-logo-area:after {
+nav .brand-logo-area:hover:after {
     content: '';
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0);
@@ -368,12 +369,18 @@ div.mobile span:last-child {
 }
 
 body section.container {
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     padding: 5% 0 0 5%;
     width: 100%;
     box-sizing: border-box;
     transition: all .3s ease-in;
     overflow-x: hidden;
+}
+
+body section.container .container-area {
+    height: auto;
+    min-height: 100%;
 }
 
 body.mobile section.container {
@@ -618,7 +625,8 @@ section.container .left-area .main-data-list div.item span.chart {
 
 section.container .left-area .main-data-list div.item span.chart img {
     margin-top: 10px;
-    width: 100%;
+    height: 100%;
+    max-height: 45px;
     float: right;
 }
 
@@ -757,6 +765,7 @@ section.container .right-area .right-area-container .accordion-contents {
     right: 0;
     opacity: 0;
     box-sizing: border-box;
+    font-family: 'yummoregular';
 }
 
 section.container .right-area .right-area-container .accordion-contents.active {
@@ -771,8 +780,7 @@ section.container .right-area .right-area-container .accordion-contents .item:fi
 
 section.container .right-area .right-area-container .accordion-contents .item {
     padding: 20px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    border-radius: 30px;
     -webkit-box-shadow: 0px 0px 5px 3px rgba(213, 213, 213, 0.45);
     -moz-box-shadow: 0px 0px 5px 3px rgba(213, 213, 213, 0.45);
     box-shadow: 0px 0px 5px 3px rgba(213, 213, 213, 0.45);
@@ -802,11 +810,22 @@ section.container .right-area .right-area-container .accordion-contents .item .h
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .header .row .col {
-    width: 16.6%;
+    width: unset;
+    margin: 0 auto;
+}
+
+section.container .right-area .right-area-container .accordion-contents .item .header .row .col .key {
+    color: #cbcbcb;
+}
+
+section.container .right-area .right-area-container .accordion-contents .item.active .header .row .col .key {
+    color: initial;
+    opacity: .5;
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .header .col.name {
-    width: 50%;
+    width: 100%;
+    margin-left: 30px;
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .header .col.country,
@@ -815,9 +834,28 @@ section.container .right-area .right-area-container .accordion-contents .item .c
     font-size: .8em;
 }
 
+section.container .right-area .right-area-container .accordion-contents .item .header .col.country {
+    margin-left: 20px;
+}
+
 section.container .right-area .right-area-container .accordion-contents .item .header .col.number {
     width: 67%;
     text-align: right;
+}
+
+section.container .right-area .right-area-container .accordion-contents .item .row .col.icon {
+    height: 50px;
+    width: 30px;
+    margin-left: 0;
+    margin: 10px 0 0 0;
+}
+
+section.container .right-area .right-area-container .accordion-contents .item .row .col.icon.women {
+    background: url('../img/women-icon.png') no-repeat;
+}
+
+section.container .right-area .right-area-container .accordion-contents .item .row .col.icon.man {
+    background: url('../img/man-icon.png') no-repeat;
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .content .row {
@@ -827,7 +865,7 @@ section.container .right-area .right-area-container .accordion-contents .item .c
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .content .row.np {
-    padding: 0 0 15px 0;
+    padding: 15px 0;
     margin-top: -40px;
 }
 
@@ -840,26 +878,8 @@ section.container .right-area .right-area-container .accordion-contents .item .c
     padding-top: 10px;
 }
 
-section.container .right-area .right-area-container .accordion-contents .item .content .row.header-row .col {
-    width: 20.8%;
-}
-
-section.container .right-area .right-area-container .accordion-contents .item .content .row.header-row .col .value {
-    font-size: 1.2em
-}
-
-section.container .right-area .right-area-container .accordion-contents .item .content .row .col.icon {
-    height: 50px;
-    margin-top: 17px;
-    width: 16.6%;
-}
-
-section.container .right-area .right-area-container .accordion-contents .item .content .row .col.icon.women {
-    background: url('../img/women-icon.png') no-repeat;
-}
-
-section.container .right-area .right-area-container .accordion-contents .item .content .row .col.icon.man {
-    background: url('../img/man-icon.png') no-repeat;
+section.container .right-area .right-area-container .accordion-contents .item .content .email {
+    margin-left: -11px;
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .content .date {
