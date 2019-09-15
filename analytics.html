@@ -84,69 +84,165 @@
                     <div class="right-area">
                         <div class="right-graphs">
                             <ul class="tabs">
-                                <li class="active"><span>gender</span></li>
-                                <li><span>generation</span></li>
+                                <li class="active" data-chart="gender"><span>gender</span></li>
+                                <li data-chart="generation"><span>generation</span></li>
                             </ul>
                             <div class="tab-contents">
                                 <div class="tab-content active">
-                                    <div class="graph">
-                                        <div id="gender" height="100"></div>
+                                    <div class="graph pt-1">
+                                        <div class="icons">
+                                            <span class="female">female</span>
+                                            <span class="male">male</span>
+                                        </div>
+                                        <canvas id="gender" height="100"></canvas>
                                     </div>
                                 </div>
                                 <div class="tab-content">
-                                    <div class="graph">
-                                        <div id="generation" height="100"></div>
+                                    <div class="graph pt-1">
+                                        <!-- <canvas id="generation"></canvas> -->
+                                        <div class="vertical rounded">
+                                            <div class="values">
+                                                <span>1000</span>
+                                                <span>750</span>
+                                                <span>500</span>
+                                                <span>250</span>
+                                                <span>0</span>
+                                            </div>
+                                            <!-- The each bar should be print like the following "progress-bar" div -->
+                                            <div class="progress-bar">
+                                                <div class="progress-track">
+                                                    <div class="progress-fill">
+                                                        <span>94%</span>
+                                                        <span>94%</span>
+                                                        <div class="chart-label">10-18</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress-bar">
+                                                <div class="progress-track">
+                                                    <div class="progress-fill">
+                                                        <span>100%</span>
+                                                        <div class="chart-label">18-25</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress-bar">
+                                                <div class="progress-track">
+                                                    <div class="progress-fill">
+                                                        <span>5%</span>
+                                                        <div class="chart-label">25-30</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress-bar">
+                                                <div class="progress-track">
+                                                    <div class="progress-fill">
+                                                        <span>27%</span>
+                                                        <div class="chart-label">30-35</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress-bar">
+                                                <div class="progress-track">
+                                                    <div class="progress-fill">
+                                                        <span>75%</span>
+                                                        <div class="chart-label">35-40</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress-bar">
+                                                <div class="progress-track">
+                                                    <div class="progress-fill">
+                                                        <span>60%</span>
+                                                        <div class="chart-label">40-50</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress-bar">
+                                                <div class="progress-track">
+                                                    <div class="progress-fill">
+                                                        <span>20%</span>
+                                                        <div class="chart-label">50-60</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress-bar">
+                                                <div class="progress-track">
+                                                    <div class="progress-fill">
+                                                        <span>34%</span>
+                                                        <div class="chart-label">60-70</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress-bar">
+                                                <div class="progress-track">
+                                                    <div class="progress-fill">
+                                                        <span>82%</span>
+                                                        <div class="chart-label">70-80</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="general-graphs">
-                    <ul class="tabs">
-                        <li class="active"><span>visitors</span></li>
-                        <li><span>foreigner</span></li>
-                        <li><span>more than one</span></li>
-                        <li><span>sign up</span></li>
-                        <li><span>peak zone</span></li>
-                        <li><span>peak ap</span></li>
-                    </ul>
-                    <div class="tab-contents">
-                        <div class="tab-content active">
-                            <div class="graph">
-                                <div id="visitors"></div>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="graph">
-                                <div id="foreigner"></div>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="graph">
-                                <div id="more_than_one"></div>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="graph">
-                                <div id="sign_up"></div>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="graph">
-                                <div id="peak_zone"></div>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="graph">
-                                <div id="peak_ap"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="general-graphs">
+                <ul class="tabs">
+                    <li class="active"><span>visitors</span></li>
+                    <li><span>foreigner</span></li>
+                    <li><span>more than one</span></li>
+                    <li><span>sign up</span></li>
+                    <li><span>peak zone</span></li>
+                    <li><span>peak ap</span></li>
+                </ul>
+                <div class="tab-contents">
+                    <div class="tab-content active">
+                        <div class="graph">
+                            <canvas id="visitors"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="graph">
+                            <canvas id="foreigner"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="graph">
+                            <canvas id="more_than_one"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="graph">
+                            <canvas id="sign_up"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="graph">
+                            <canvas id="peak_zone"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="graph">
+                            <canvas id="peak_ap"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
     </div>
 
     <script type="text/javascript" src="assets/js/plugins/jquery-3.4.1.min.js"></script>
@@ -154,8 +250,7 @@
     <script type="text/javascript" src="assets/js/app.js"></script>
 
     <!-- PAGE PLUGINS -->
-    <!-- <script type="text/javascript" src="assets/js/plugins/Chart.min.js"></script> -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/Chart.min.js"></script>
     <script type="text/javascript" src="assets/js/analytics.js"></script>
 
     <script>

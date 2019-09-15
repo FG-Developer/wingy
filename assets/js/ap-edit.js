@@ -39,7 +39,27 @@ $(function() {
 
     $('#zone').on('change', function() {
         var currentVal = $(this).val();
-
         $('.area-chart-img').attr('src', 'assets/img/' + currentVal);
-    })
+    });
+
+    $('.change-zone-input').on('change', function() {
+        var preview = $('img.area-chart-img');
+        var file = document.querySelector('.change-zone-input').files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+            $(preview).attr('src', reader.result);
+            sendFileToServer();
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    });
+
+    $('.change-zone').on('click', function() {
+        $('.change-zone-input').trigger('click');
+    });
 });

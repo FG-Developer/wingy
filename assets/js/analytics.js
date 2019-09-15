@@ -1,28 +1,48 @@
 $(function() {
 
     initAreaChart('visitors');
-    initAreaChart('foreigner');
-    initAreaChart('more_than_one');
-    initAreaChart('sign_up');
-    initAreaChart('peak_zone');
-    initAreaChart('peak_ap');
     initDonutChart('gender');
-    initDonutChart('generation');
 
-    $('.tabs li').on('click', function() {
+    $('.general-graphs .tabs li').on('click', function() {
         var currentItem = $(this).parent('.tabs').children('li.active');
-        var tabContents = $(this).parent('.tabs').parent().children('.tab-contents');
         var clickedIndex = $(this).index();
 
         if (clickedIndex != $(currentItem).index()) {
             $(currentItem).removeClass('active');
             $(this).addClass('active');
-            $(tabContents).children('.tab-content.active').removeClass('active');
-            $(tabContents).children('.tab-content:eq(' + clickedIndex + ')').addClass('active');
+            $('.general-graphs .tab-content.active').removeClass('active');
+            $('.general-graphs .tab-content:eq(' + clickedIndex + ')').addClass('active');
+
+            var graphId = $('.general-graphs .tab-content.active .graph canvas').attr('id');
+            initAreaChart(graphId);
+        }
+    });
+
+    $('.right-graphs .tabs li').on('click', function() {
+        var currentItem = $(this).parent('.tabs').children('li.active');
+        var clickedIndex = $(this).index();
+
+        if (clickedIndex != $(currentItem).index()) {
+            $(currentItem).removeClass('active');
+            $(this).addClass('active');
+            $('.right-graphs .tab-content.active').removeClass('active');
+            $('.right-graphs .tab-content:eq(' + clickedIndex + ')').addClass('active');
+
+            if ($(this).data('chart') == 'gender') {
+                initDonutChart('gender');
+            } else if ($(this).data('chart') == 'generation') {
+                initGenerationChart('generation');
+            }
         }
     });
 });
 
+/**
+ * 
+ * This function was used to only generating dummy data for Area Charts.
+ * 
+ * @param {integer} count 
+ */
 var randomScalingFactor = function(count) {
     var arr = [];
     for (var i = 0; i < count; i++) {
@@ -31,59 +51,165 @@ var randomScalingFactor = function(count) {
     return arr;
 };
 
-var initAreaChart = function(id) {
+/** 
+ * When every Generation tab clicked, this function will be run. 
+ * If desired that getting new data from the server, it can be taken here.
+ */
+var initGenerationChart = function(id) {
+    // var chart = document.getElementById(id).getContext('2d');
 
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
+    // var options = {
+    //     responsive: true,
+    //     maintainAspectRatio: true,
+    //     animation: {
+    //         easing: 'easeInOutQuad',
+    //         duration: 520
+    //     },
+    //     legend: {
+    //         display: false
+    //     },
+    //     scales: {
+    //         yAxes: [{
+    //             gridLines: {
+    //                 display: false
+    //             },
+    //             ticks: {
+    //                 beginAtZero: true
+    //             }
+    //         }],
+    //         xAxes: [{
+    //             gridLines: {
+    //                 display: false
+    //             },
+    //             barPercentage: 0.15
+    //         }]
+    //     },
+    // };
 
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Year', 'Sales', 'Expenses'],
-            ['2013', 1000, 999],
-            ['2014', 1170, 460],
-            ['2015', 660, 1120],
-            ['2016', 1030, 540]
-        ]);
+    // var myBarChart = new Chart(chart, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ['10-18', '18-25', '25-30', '30-35', '35-40', '40-50', '50-60', '60-70', '70-80'],
+    //         datasets: [{
+    //             backgroundColor: '#445568',
+    //             borderWidth: 0,
+    //             data: randomScalingFactor(9),
+    //         }]
+    //     },
+    //     options: options
 
-        var options = {
-            //legend: 'none', disable data map
-            title: 'Company Performance',
-            hAxis: { title: 'Year', titleTextStyle: { color: '#333' } },
-            vAxis: { minValue: 0 },
-            isStacked: true
-        };
+    // });
 
-        var chart = new google.visualization.AreaChart(document.getElementById(id));
-        chart.draw(data, options);
-    }
+
+    $('.vertical .progress-fill span').each(function() {
+        $(this).css('opacity', 0);
+        var percent = $(this).html();
+        var pTop = 100 - (percent.slice(0, percent.length - 1)) + "%";
+        $(this).parent().css({
+            'height': percent
+        });
+        return;
+    });
 }
 
+/**
+ * When the chart tabs is clicked, this function will be generate chart according to given {item}.
+ * If desired that getting new data from the server, it can be taken here.
+ * @param {item} id 
+ */
+var initAreaChart = function(id) {
+
+    var chart = document.getElementById(id).getContext('2d'),
+        gradient = chart.createLinearGradient(0, 0, 0, 450),
+        gradient2 = chart.createLinearGradient(0, 0, 0, 450);
+
+    gradient.addColorStop(0, 'rgba(166, 42 ,215, 0.7)');
+    gradient.addColorStop(1, 'rgba(166, 42 ,215, 0.7)');
+
+    gradient2.addColorStop(0, 'rgba(248, 87, 166, 0.7)');
+    gradient2.addColorStop(1, 'rgba(248, 87, 166, 0.7)');
+
+    var data = {
+        labels: ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
+        datasets: [{
+                backgroundColor: gradient,
+                borderWidth: 0,
+                data: randomScalingFactor(17)
+            },
+            {
+                backgroundColor: gradient2,
+                borderWidth: 0,
+                data: randomScalingFactor(17)
+            }
+        ]
+    };
+
+    var options = {
+        responsive: true,
+        maintainAspectRatio: true,
+        animation: {
+            easing: 'easeInOutQuad',
+            duration: 520
+        },
+        legend: {
+            display: false
+        },
+        scales: {
+            yAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }]
+        }
+    };
+
+    var chartInstance = new Chart(chart, {
+        type: 'line',
+        data: data,
+        options: options
+    });
+}
+
+/**
+ * 
+ * When the Gender tabs is clicked, this function will be generate Donut chart to Gender.
+ * If desired that getting new data from the server, it can be taken here.
+ * @param {item} id 
+ */
 var initDonutChart = function(id) {
-    var randColors = ['#97BFF4', '#8BE2CE', '#FF7FB0', '#FFE57F'];
-    var borderColors = ['#307FE9', '#17C69D', '#FF0061', '#FFCC00'];
+    var randColors = ['#df388b', '#39a2de'];
+    var borderColors = ['#df388b', '#39a2de'];
     var ctx = document.getElementById(id).getContext('2d');
+
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Match', 'Partial Match', 'No Prefs', 'No Match'],
+            labels: ['Female', 'Male'],
             datasets: [{
-                data: randomScalingFactor(4),
+                data: [70, 30],
                 backgroundColor: randColors,
                 borderColor: borderColors,
                 borderWidth: 0,
                 borderAlign: 'inner'
-            }],
+            }]
         },
         options: {
+            rotation: -1.5 * Math.PI,
+            cutoutPercentage: 90,
+            tooltipTemplate: "<%= value %>",
+            onAnimationComplete: function() {
+                this.showTooltip(this.segments, true);
+            },
+            tooltipEvents: [],
+            showTooltips: true,
             legend: {
-                display: true,
-                position: 'top',
-                padding: 0,
-                labels: {
-                    fontColor: '#172B4D',
-                    boxWidth: 15
-                }
-            }
+                display: false
+            },
         },
     });
 }

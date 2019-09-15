@@ -31,12 +31,7 @@ html .ui-button.ui-state-disabled:active {
 
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
-.ui-widget-header .ui-state-highlight {
-    background: url('../../img/calendar-circle.png') !important;
-    background-position: center center;
-    background-size: cover !important;
-}
-
+.ui-widget-header .ui-state-highlight,
 .ui-state-hover,
 .ui-widget-content .ui-state-hover,
 .ui-widget-header .ui-state-hover,
@@ -44,8 +39,10 @@ html .ui-button.ui-state-disabled:active {
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus,
 .ui-button:hover,
-.ui-button:focus {
-    background: url('../../img/calendar-circle.png') !important;
+.ui-button:focus,
+.ui_tpicker_hour_slider span,
+.ui_tpicker_minute_slider span {
+    background: url('../../img/calendar-circle.png') no-repeat !important;
     background-position: center center;
     background-size: cover !important;
 }
@@ -106,4 +103,38 @@ html .ui-button.ui-state-disabled:active {
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
     color: #434343 !important;
+}
+
+.picture-page-calendar td span,
+.picture-page-calendar td a {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 1em !important;
+    line-height: normal;
+    line-height: 28px;
+    font-size: 1em;
+}
+
+.ui-timepicker-div .ui-widget-content .ui-state-default,
+.ui-timepicker-div .ui-widget-header .ui-state-default,
+.ui-timepicker-div .ui-button,
+html .ui-timepicker-div .ui-button.ui-state-disabled:hover,
+html .ui-timepicker-div .ui-button.ui-state-disabled:active {
+    background: url('../../img/calendar-circle.png') no-repeat !important;
+    background-position: center 1px;
+    background-size: cover !important
+}
+
+.ui-timepicker-div .ui-slider-horizontal .ui-slider-handle {
+    top: -.2em;
+}
+
+.ui-timepicker-div .ui_tpicker_hour_slider,
+.ui-timepicker-div .ui_tpicker_minute_slider {
+    border: 1px solid #c5c5c5 !important;
+}
+
+.picture-page-calendar .ui-datepicker-close,
+.picture-page-calendar .ui-datepicker-current {
+    background: none !important;
 }

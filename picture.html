@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/js/plugins/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
 </head>
 
 <body>
     <div class="wrapper">
-
         <div class="mobile">
             <div class="menu-items">
                 <span></span>
@@ -67,24 +67,140 @@
                 <div class="picture-container">
                     <div class="row">
                         <div class="container">
-                            <div class="content">
-                                <div class="close_btn"></div>
-                                <div class="delete_btn_btn"></div>
-                                <div class="col"></div>
-                                <div class="col"></div>
+                            <!-- 
+                                The content that has "default" class is a section that will be clone for new picture section. 
+                                Don't remove it from html.
+                            -->
+                            <div class="content default">
+                                <a href="javascript:;" class="close-btn"></a>
+                                <a href="javascript:;" class="delete-btn">delete</a>
+                                <form action="" method="POST">
+                                    <div class="row">
+                                        <div>
+                                            <input type="file" class="desktop-bg-input" accept="image/*">
+                                            <img src="assets/img/desktop-preview-icon.png" class="bg-icon desktop-bg" alt="Change Desktop Background">
+                                        </div>
+                                        <div>
+                                            <input type="file" class="mobile-bg-input" accept="image/*">
+                                            <img src="assets/img/mobile-preview-icon.png" class="bg-icon mobile-bg" alt="Change Mobile Background">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <span class="zone-text">no selected a zone</span>
+                                        <select name="zone" id="zone" class="custom-select">
+                                            <option value="zone-1">zone 01</option>
+                                            <option value="zone-2">zone 02</option>
+                                            <option value="zone-3">zone 03</option>
+                                            <option value="zone-4">zone 04</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="datetime-area">
+                                            <span class="date-time-text date">start date</span>
+                                            <span class="date-time-text time">time</span>
+                                            <input type="text" name="start_date" class="start_date">
+                                        </div>
+                                        <div class="datetime-area">
+                                            <span class="date-time-text date">end date</span>
+                                            <span class="date-time-text time">time</span>
+                                            <input type="text" name="end_date" class="end_date">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a href="javascript:;" class="btn preview">preview</a>
+                                        <button type="submit" class="btn save">save</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="content"></div>
-                            <div class="content"></div>
-                            <div class="content"></div>
-                            <div class="content"></div>
-                            <div class="content"></div>
-                            <div class="content"></div>
-                            <div class="content"></div>
-                            <div class="content"></div>
-                            <div class="content"></div>
-                            <div class="content"></div>
+                            <!-- Default picture section end -->
+
+                            <!-- When page is loaded, the picture data that get from database they should print like the following examples. -->
+                            <div class="content">
+                                <a href="javascript:;" class="close-btn"></a>
+                                <a href="javascript:;" class="delete-btn">delete</a>
+                                <form action="" method="POST">
+                                    <div class="row">
+                                        <div>
+                                            <input type="file" class="desktop-bg-input" accept="image/*">
+                                            <img src="assets/img/desktop-preview-icon.png" class="bg-icon desktop-bg" alt="Change Desktop Background">
+                                        </div>
+                                        <div>
+                                            <input type="file" class="mobile-bg-input" accept="image/*">
+                                            <img src="assets/img/mobile-preview-icon.png" class="bg-icon mobile-bg" alt="Change Mobile Background">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <span class="zone-text">zone 01</span>
+                                        <select name="zone" id="zone" class="custom-select">
+                                            <option value="zone-1">zone 01</option>
+                                            <option value="zone-2">zone 02</option>
+                                            <option value="zone-3">zone 03</option>
+                                            <option value="zone-4">zone 04</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="datetime-area">
+                                            <span class="date-time-text date">12.09.2019</span>
+                                            <span class="date-time-text time">10:00</span>
+                                            <input type="text" name="start_date" class="start_date">
+                                        </div>
+                                        <div class="datetime-area">
+                                            <span class="date-time-text date">14.09.2019</span>
+                                            <span class="date-time-text time">10:45</span>
+                                            <input type="text" name="end_date" class="end_date">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a href="javascript:;" class="btn preview">preview</a>
+                                        <button type="submit" class="btn save">save</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="content">
+                                <a href="javascript:;" class="close-btn"></a>
+                                <a href="javascript:;" class="delete-btn">delete</a>
+                                <form action="" method="POST">
+                                    <div class="row">
+                                        <div>
+                                            <input type="file" class="desktop-bg-input" accept="image/*">
+                                            <img src="assets/img/desktop-preview-icon.png" class="bg-icon desktop-bg" alt="Change Desktop Background">
+                                        </div>
+                                        <div>
+                                            <input type="file" class="mobile-bg-input" accept="image/*">
+                                            <img src="assets/img/mobile-preview-icon.png" class="bg-icon mobile-bg" alt="Change Mobile Background">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <span class="zone-text">zone 02</span>
+                                        <select name="zone" id="zone" class="custom-select">
+                                            <option value="zone-1">zone 01</option>
+                                            <option value="zone-2">zone 02</option>
+                                            <option value="zone-3">zone 03</option>
+                                            <option value="zone-4">zone 04</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="datetime-area">
+                                            <span class="date-time-text date">10.09.2019</span>
+                                            <span class="date-time-text time">12:00</span>
+                                            <input type="text" name="start_date" class="start_date">
+                                        </div>
+                                        <div class="datetime-area">
+                                            <span class="date-time-text date">12.09.2019</span>
+                                            <span class="date-time-text time">14:30</span>
+                                            <input type="text" name="end_date" class="end_date">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a href="javascript:;" class="btn preview">preview</a>
+                                        <button type="submit" class="btn save">save</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- End of the picture section examples that will print from database when page loaded. -->
                         </div>
                     </div>
+                    <a href="javascript:;" class="add-new-picture"><img src="assets/img/add-btn-icon.png" alt="Add new picture"></a>
                 </div>
             </div>
         </section>
@@ -95,10 +211,8 @@
     <script type="text/javascript" src="assets/js/app.js"></script>
 
     <!-- PAGE PLUGINS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
     <script type="text/javascript" src="assets/js/picture.js"></script>
-
-    <script>
-    </script>
 </body>
 
 </html>
