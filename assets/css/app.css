@@ -626,7 +626,7 @@ section.container .left-area .main-data-list div.item span.chart {
 section.container .left-area .main-data-list div.item span.chart img {
     margin-top: 10px;
     height: 100%;
-    max-height: 45px;
+    max-height: 40px;
     float: right;
 }
 
@@ -753,7 +753,7 @@ section.container .right-area .right-area-container .button-area button {
 
 section.container .right-area .right-area-container .accordion-contents {
     display: inherit;
-    width: 90%;
+    width: 96%;
     margin: 0 auto;
     background: #fff;
     height: auto;
@@ -802,7 +802,6 @@ section.container .right-area .right-area-container .accordion-contents .item .c
 
 section.container .right-area .right-area-container .accordion-contents .item .header {
     cursor: pointer;
-    padding-bottom: 10px;
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .header .row {
@@ -811,7 +810,16 @@ section.container .right-area .right-area-container .accordion-contents .item .h
 
 section.container .right-area .right-area-container .accordion-contents .item .header .row .col {
     width: unset;
-    margin: 0 auto;
+    margin: auto
+}
+
+section.container .right-area .right-area-container .accordion-contents .item .header .row .col:first-child {
+    width: 30px;
+    margin: unset;
+}
+
+section.container .right-area .right-area-container .accordion-contents .item .header .row .col:nth-child(2) {
+    margin-left: 10px
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .header .row .col .key {
@@ -823,31 +831,20 @@ section.container .right-area .right-area-container .accordion-contents .item.ac
     opacity: .5;
 }
 
-section.container .right-area .right-area-container .accordion-contents .item .header .col.name {
-    width: 100%;
-    margin-left: 30px;
-}
-
 section.container .right-area .right-area-container .accordion-contents .item .header .col.country,
 section.container .right-area .right-area-container .accordion-contents .item .header .col.number,
 section.container .right-area .right-area-container .accordion-contents .item .content {
     font-size: .8em;
 }
 
-section.container .right-area .right-area-container .accordion-contents .item .header .col.country {
-    margin-left: 20px;
-}
-
 section.container .right-area .right-area-container .accordion-contents .item .header .col.number {
-    width: 67%;
     text-align: right;
+    flex: auto;
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .row .col.icon {
     height: 50px;
-    width: 30px;
-    margin-left: 0;
-    margin: 10px 0 0 0;
+    margin-top: 20px !important;
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .row .col.icon.women {
@@ -873,18 +870,24 @@ section.container .right-area .right-area-container .accordion-contents .item .c
     border-top: 1px solid rgba(16, 15, 13, .2);
 }
 
+section.container .right-area .right-area-container .accordion-contents .item .content .row .col.space {
+    width: 30px;
+}
+
 section.container .right-area .right-area-container .accordion-contents .item .content .row .col {
     width: 16.6%;
     padding-top: 10px;
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .content .email {
-    margin-left: -11px;
+    margin-left: 10px;
+    margin-top: -15px;
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .content .date {
     text-align: right;
     flex: auto;
+    margin-top: -15px;
 }
 
 section.container .right-area .right-area-container .accordion-contents .item .content .row .col .key {

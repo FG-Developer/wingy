@@ -25,7 +25,6 @@ body {
     background-position: center center;
     background-size: cover;
     position: relative;
-    padding: 7% 0 10% 0;
     border-bottom-right-radius: 300px;
 }
 
@@ -40,8 +39,9 @@ body {
 }
 
 .wrapper div.form-area {
-    float: left;
-    margin-left: 5%;
+    position: absolute;
+    left: 5%;
+    top: 5%;
 }
 
 .wrapper div.form-area .brand-logo-area {
