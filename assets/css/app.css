@@ -425,7 +425,7 @@ section.container .left-area {
 
 section.container .left-area.active:after {
     position: absolute;
-    top: 72.9%;
+    top: 73.95%;
     right: -.6%;
     width: 56px;
     height: 194px;
@@ -442,7 +442,7 @@ section.container .left-area.active:before {
     position: absolute;
     right: 1.4%;
     width: 13%;
-    top: 78.9%;
+    top: 79.72%;
     height: 62.4px;
     background: white;
     z-index: 20;
@@ -774,7 +774,7 @@ section.container .right-area .right-area-container .accordion-contents {
     overflow-y: scroll;
     left: 100%;
     transition: all .3s ease-in-out;
-    padding: 30px 10px 10px 10px;
+    padding: 30px 10px;
     position: absolute;
     right: 0;
     opacity: 0;
@@ -974,7 +974,8 @@ section.container .right-area .right-graphs {
 
 .tab-content .graph.area-chart {
     width: 100%;
-    height: 400px !important;
+    height: 600px !important;
+    text-align: center;
 }
 
 .tab-content.active .graph {

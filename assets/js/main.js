@@ -11,7 +11,14 @@ var swiper = new Swiper('.swiper-container', {
     centerInsufficientSlides: true,
     nested: true,
     height: 430,
-    spaceBetween: 10
+    spaceBetween: 10,
+    on: {
+        touchMove: function(event){
+            $('.left-area').removeClass('active');
+            $('.item-content-detail').hide();
+            $('.item-content').removeClass('active');
+        }
+    }
 });
 
 var swiperNested = new Swiper('.swiper-container-nested', {
@@ -22,7 +29,7 @@ var swiperNested = new Swiper('.swiper-container-nested', {
     slideToClickedSlide: true,
     centerInsufficientSlides: true,
     height: 350,
-    freeMode: true,
+    // freeMode: true,
     scrollbar: {
         el: '.swiper-scrollbar',
     },
@@ -36,12 +43,27 @@ var swiperNested = new Swiper('.swiper-container-nested', {
             // $(event.target).addClass('active');
             $('.left-area').addClass('active');
         }
-    },
+    }
 
 });
+
+setMarginToMainDataList();
+
 var slideSpeed = 300;
 
 $(function() {
+
+    $(window).resize(function() {
+        setMarginToMainDataList();
+    });
+
+    $('.swiper-container').on('scroll', function(){
+        console.log('aaaa');
+    })
+
+    $('.swiper-scrollbar').on('scroll', function(){
+        console.log('vv');
+    })
 
     $('.accordion-contents .item .header').click(function() {
         var item = $(this).parent('.item');
@@ -115,5 +137,26 @@ function initRightAreaContent(accordionContentId) {
     $('.right-area-container .accordion-contents.active .item').removeClass('active');
     $('.right-area-container .accordion-contents').removeClass('active');
     $('.right-area-container .accordion-contents#' + accordionContentId).addClass('active');
+
+}
+
+function setMarginToMainDataList(){
+
+    if($(window).height() > 945){
+        var textAreaHeight = $('.text-area').height();
+        var calendarAreaHeight = $('.calendar-area').height() + 15;
+        var daysHeight = $('.days').height();
+        var mainDataListHeight = $('.main-data-list').height() + 30;
+        var marginTop = parseFloat($('section.container').css('padding-top').replace('px', ''));
+        var totalHeight = textAreaHeight + calendarAreaHeight + daysHeight + mainDataListHeight + marginTop;
+        var wh = $(window).height();
+
+        $('.main-data-list').css('margin-top', (wh - totalHeight));
+    } else {
+        $('.main-data-list').css('margin-top', 30);
+    }
+
+
+    $('.accordion-contents').css('max-height', $('.right-area-container').height() - 100);
 
 }

@@ -1,18 +1,41 @@
-jcWheelZoom = JcWheelZoom.create('.area-chart-img');
-
-window.addEventListener('resize', function() {
-    jcWheelZoom.prepare();
-});
-
+// jcWheelZoom = JcWheelZoom.create('.area-chart-img');
+//
+// window.addEventListener('resize', function() {
+//     jcWheelZoom.prepare();
+// });
+//
 document.getElementById('zoom-in').addEventListener('click', function() {
-    jcWheelZoom.zoomUp();
+    // jcWheelZoom.zoomUp();
+    zoomin();
 });
 
 document.getElementById('zoom-out').addEventListener('click', function() {
-    jcWheelZoom.zoomDown();
+    // jcWheelZoom.zoomDown();
+    zoomout();
 });
 
+var imageOriginWidth = document.getElementsByClassName("area-chart-img")[0];
+function zoomin() {
+    var myImg = document.getElementsByClassName("area-chart-img")[0];
+    var currWidth = myImg.clientWidth;
+    if (currWidth >= (imageOriginWidth.naturalWidth * 1.2)) return false;
+    else {
+        myImg.style.width = (currWidth + 100) + "px";
+    }
+}
+
+function zoomout() {
+    var myImg = document.getElementsByClassName("area-chart-img")[0];
+    var currWidth = myImg.clientWidth;
+    var currHeight = myImg.clientHeight;
+    if (currHeight <= imageOriginWidth.naturalHeight) return false;
+    else {
+        myImg.style.width = (currWidth - 100) + "px";
+    }
+}
+
 $(function() {
+
     $('.tabs li').on('click', function() {
 
         $('.form-container').hide();

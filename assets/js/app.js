@@ -1,9 +1,5 @@
 $(function() {
 
-    $(document).on('scroll', function() {
-        console.log('aassasad');
-    })
-
     $('.change-brand-logo').on('click', function() {
         $('#brand-logo').trigger('click');
     });
@@ -69,11 +65,22 @@ $(function() {
     if ($(".datepicker").length) {
         var datePicker = $(".datepicker").datepicker({
             dateFormat: "dd.mm.yy",
+            // changeYear: true,
             beforeShow: function(input, inst) {
                 setTimeout(function() {
                     inst.dpDiv.css({
                         width: $('.calendar-area').outerWidth(),
                         marginTop: input.offsetHeight - 20,
+                        left: $('.calendar-area').offset().left
+                    });
+                });
+            },
+            onChangeMonthYear: function(year, month, inst){
+                console.log(inst);
+                setTimeout(function() {
+                    inst.dpDiv.css({
+                        width: $('.calendar-area').outerWidth(),
+                        marginTop: this.offsetHeight - 20,
                         left: $('.calendar-area').offset().left
                     });
                 });
