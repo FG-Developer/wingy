@@ -702,6 +702,8 @@ section.container .right-area .right-area-container {
     right: -130%;
     transition: all .4s ease-in-out;
     position: relative;
+    height: auto;
+    min-height: 100%;
 }
 
 section.container .right-area .right-area-container .section-connector {
@@ -766,7 +768,7 @@ section.container .right-area .right-area-container .button-area button {
 
 section.container .right-area .right-area-container .accordion-contents {
     display: inherit;
-    width: 96%;
+    width: 100%;
     margin: 0 auto;
     background: #fff;
     height: auto;
