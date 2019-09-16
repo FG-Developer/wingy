@@ -425,8 +425,8 @@ section.container .left-area {
 
 section.container .left-area.active:after {
     position: absolute;
-    top: 666px;
-    right: -26px;
+    top: 72.9%;
+    right: -.6%;
     width: 56px;
     height: 194px;
     background: url(../img/right-bar-bg.png) no-repeat;
@@ -440,10 +440,10 @@ section.container .left-area.active:after {
 section.container .left-area.active:before {
     content: '';
     position: absolute;
-    right: -6px;
-    width: 82px;
-    top: 719px;
-    height: 62px;
+    right: 1.4%;
+    width: 13%;
+    top: 78.9%;
+    height: 62.4px;
     background: white;
     z-index: 20;
     border-top-right-radius: 50px;
