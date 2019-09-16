@@ -380,7 +380,6 @@ body section.container {
 
 body section.container .container-area {
     height: auto;
-    min-height: 100%;
 }
 
 body.mobile section.container {
