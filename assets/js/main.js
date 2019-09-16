@@ -29,10 +29,12 @@ var swiperNested = new Swiper('.swiper-container-nested', {
     mousewheel: true,
     on: {
         transitionStart: function() {
-            $('.data-item').removeClass('active');
+            // $('.data-item').removeClass('active');
+            $('.left-area').removeClass('active');
         },
         click: function(event) {
-            $(event.target).addClass('active');
+            // $(event.target).addClass('active');
+            $('.left-area').addClass('active');
         }
     },
 
@@ -60,7 +62,6 @@ $(function() {
 
     $(".data-item").on('click', function(e) {
 
-        // $('.left-area').addClass('active');
         $('.data-item').removeClass('active');
         var accordionContentId = $(this).data('accordion-content');
         initRightAreaContent(accordionContentId);
@@ -68,7 +69,7 @@ $(function() {
     });
 
     $('.main-data-list').on('click', '.item-content', function(e) {
-
+        $('.left-area').removeClass('active');
         closeRightArea();
 
         if ($(this).hasClass('active')) {

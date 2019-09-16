@@ -250,4 +250,10 @@
     section.container .right-area .right-area-container .accordion-contents .item .content .row {
         display: flex !important;
     }
+    section.container .left-area.active:after {
+        position: unset !important;
+    }
+    section.container .left-area.active:before {
+        position: unset !important;
+    }
 }
