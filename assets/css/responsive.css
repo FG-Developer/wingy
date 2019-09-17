@@ -257,7 +257,7 @@
         position: unset !important;
     }
     nav .menu {
-        top: 25px !important;
+        top: 20px !important;
         width: 200px !important;
     }
     nav .brand-logo-area {
@@ -273,12 +273,15 @@
         height: 70px !important;
     }
     nav .menu ul li {
-        line-height: 45px !important;
+        line-height: 40px !important;
     }
     nav .menu ul li.menu-item.active a:before {
-        height: 45px!important;
+        height: 40px!important;
+    }
+    nav .menu ul li a {
+        line-height: 36px
     }
     nav .menu ul li.language {
-        margin-top: 10px !important;
+        margin-top: 5px !important;
     }
 }
