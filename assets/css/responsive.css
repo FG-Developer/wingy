@@ -149,6 +149,18 @@
     section.container .left-area .days ul li a:hover {
         font-size: 1.2em !important;
     }
+    section.container .left-area .main-data-list div.item span.chart img {
+        margin-top: 15px !important;
+        max-width: 100px !important;
+        height: unset !important;
+        max-height: unset !important;
+    }
+    section.container.main {
+        padding-bottom: 0px !important;
+    }
+    section.container .right-area {
+        margin-top: 0 !important;
+    }
 }
 
 @media screen and (max-width: 600px) {

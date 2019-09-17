@@ -306,12 +306,18 @@ label.error:after {
     .wrapper {
         padding: 0;
     }
+    .wrapper div.form-area div.form-container {
+        margin-top: 0 !important;
+        position: relative;
+    }
     .wrapper div.form-area {
         float: none;
-        zoom: .7;
+        zoom: .65;
         margin: 0 auto;
         display: block;
-        padding-top: 50px;
+        left: 0;
+        right: 0;
+        top: 0;
     }
     .wrapper div.form-area div.form-container .container {
         margin: 0 auto;

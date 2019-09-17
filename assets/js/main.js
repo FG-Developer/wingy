@@ -1,10 +1,7 @@
 var swiper = new Swiper('.swiper-container', {
     direction: 'vertical',
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
-    freeMode: true,
     slidesPerView: 6,
+    allowTouchMove: false,
     centeredSlides: true,
     loop: true,
     slideToClickedSlide: true,
@@ -13,7 +10,7 @@ var swiper = new Swiper('.swiper-container', {
     height: 430,
     spaceBetween: 10,
     on: {
-        touchMove: function(event){
+        touchMove: function(event) {
             $('.left-area').removeClass('active');
             $('.item-content-detail').hide();
             $('.item-content').removeClass('active');
@@ -57,11 +54,11 @@ $(function() {
         setMarginToMainDataList();
     });
 
-    $('.swiper-container').on('scroll', function(){
+    $('.swiper-container').on('scroll', function() {
         console.log('aaaa');
     })
 
-    $('.swiper-scrollbar').on('scroll', function(){
+    $('.swiper-scrollbar').on('scroll', function() {
         console.log('vv');
     })
 
@@ -140,9 +137,9 @@ function initRightAreaContent(accordionContentId) {
 
 }
 
-function setMarginToMainDataList(){
+function setMarginToMainDataList() {
 
-    if($(window).height() > 945){
+    if ($(window).height() > 945) {
         var textAreaHeight = $('.text-area').height();
         var calendarAreaHeight = $('.calendar-area').height() + 15;
         var daysHeight = $('.days').height();
