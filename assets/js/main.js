@@ -54,14 +54,6 @@ $(function() {
         setMarginToMainDataList();
     });
 
-    $('.swiper-container').on('scroll', function() {
-        console.log('aaaa');
-    })
-
-    $('.swiper-scrollbar').on('scroll', function() {
-        console.log('vv');
-    })
-
     $('.accordion-contents .item .header').click(function() {
         var item = $(this).parent('.item');
         var currentActive = $('.accordion-contents .item.active');
