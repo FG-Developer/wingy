@@ -257,27 +257,27 @@
         position: unset !important;
     }
     nav .menu {
-        top: 30px !important;
+        top: 25px !important;
     }
     nav .brand-logo-area {
-        width: 100px !important;
-        height: 100px !important;
+        width: 80px !important;
+        height: 80px !important;
     }
     nav .brand-logo-area:hover:after {
-        width: 80px !important;
-        height: 80px !important;
+        width: 60px !important;
+        height: 60px !important;
     }
     nav .brand-logo-area .brand-logo-container {
-        width: 80px !important;
-        height: 80px !important;
+        width: 60px !important;
+        height: 60px !important;
     }
     nav .menu ul li {
-        line-height: 50px !important;
+        line-height: 30px !important;
     }
     nav .menu ul li.menu-item.active a:before {
-        height: 50px!important;
+        height: 30px!important;
     }
     nav .menu ul li.language {
-        margin-top: 15px !important;
+        margin-top: 10px !important;
     }
 }
