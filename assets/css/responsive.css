@@ -256,4 +256,28 @@
     section.container .left-area.active:before {
         position: unset !important;
     }
+    nav .menu {
+        top: 30px !important;
+    }
+    nav .brand-logo-area {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    nav .brand-logo-area:hover:after {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    nav .brand-logo-area .brand-logo-container {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    nav .menu ul li {
+        line-height: 50px !important;
+    }
+    nav .menu ul li.menu-item.active a:before {
+        height: 50px!important;
+    }
+    nav .menu ul li.language {
+        margin-top: 15px !important;
+    }
 }

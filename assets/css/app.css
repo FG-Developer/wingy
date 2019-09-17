@@ -1303,7 +1303,7 @@ section.container .picture-container .content {
     transition: all .3s ease-in-out;
 }
 
-section.container .picture-container .content:hover{
+section.container .picture-container .content:hover {
     transform: scale(1.02);
     -webkit-transform: scale(1.02);
     background-color: rgb(241, 242, 242);
