@@ -13,6 +13,8 @@
 <body>
 
     <div class="wrapper">
+        <img src="assets/img/login-bg.jpg" data-mobile-img="assets/img/login-bg-mobile.jpg" class="bg-img">
+
         <div class="wingy-logo">
             <img src="assets/img/logo.png" alt="Wingy" class="logo">
         </div>
@@ -123,6 +125,26 @@
     <script src="assets/js/countries.js"></script>
 
     <script>
+        checkBgImage();
+
+        $(window).on('resize', function() {
+            checkBgImage();
+        })
+
+        var mobileBg = $('.bg-img').data('mobile-img');
+        var desktopBg = $('.bg-img').attr('src');
+
+        function checkBgImage() {
+
+            if ($(window).width() <= 600) {
+                $(bgImg).attr('src', mobileBg);
+            } else {
+                $('.wrapper').height($(document).height());
+
+                $(bgImg).attr('src', desktopBg);
+            }
+        }
+
         $('form').validate({
             rules: {
                 phone: {
