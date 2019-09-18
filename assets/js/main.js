@@ -1,4 +1,4 @@
-var swiper = new Swiper('.swiper-container', {
+let mySwiper = new Swiper('.swiper-container', {
     direction: 'vertical',
     slidesPerView: 6,
     allowTouchMove: false,
@@ -17,6 +17,8 @@ var swiper = new Swiper('.swiper-container', {
         }
     }
 });
+
+$('.main-data-list').removeClass('swiper-container-android');
 
 var swiperNested = new Swiper('.swiper-container-nested', {
     direction: 'vertical',

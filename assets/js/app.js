@@ -75,8 +75,7 @@ $(function() {
                     });
                 });
             },
-            onChangeMonthYear: function(year, month, inst){
-                console.log(inst);
+            onChangeMonthYear: function(year, month, inst) {
                 setTimeout(function() {
                     inst.dpDiv.css({
                         width: $('.calendar-area').outerWidth(),
