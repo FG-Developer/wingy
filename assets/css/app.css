@@ -314,6 +314,7 @@ div.mobile {
     height: 121px;
     width: 100%;
     position: relative;
+    background-size: 43%;
 }
 
 div.mobile img.logo {
@@ -344,7 +345,7 @@ div.mobile .menu-items {
     cursor: pointer;
     position: absolute;
     left: 30px;
-    top: 25px;
+    top: 20px;
 }
 
 body.mobile div.mobile .menu-items {
