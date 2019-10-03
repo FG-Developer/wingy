@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="assets/css/client-login.css">
+    <link rel="stylesheet" href="assets/js/plugins/jquery-ui/jquery-ui.min.css">
 </head>
 
 <body>
@@ -60,7 +61,7 @@
                                 <input type="email" name="emeil" placeholder="e-mail" required data-msg="Please enter your e-mail address">
                             </div>
                             <div class="form-row">
-                                <input name="birthday" type="text" placeholder="birthday" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required data-msg="Please enter your birthday">
+                                <input name="birthday" id="birthday" type="text" placeholder="birthday" required data-msg="Please enter your birthday">
                             </div>
                             <div class="form-row">
                                 <select name="gender" required data-msg="Please choose your gender">
@@ -121,18 +122,22 @@
     </div>
 
     <script type="text/javascript" src="assets/js/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="assets/js/plugins/jquery.validate.min.js"></script>
     <script src="assets/js/countries.js"></script>
 
     <script>
+        $('#birthday').datepicker();
+
         checkBgImage();
 
         $(window).on('resize', function() {
             checkBgImage();
-        })
+        });
 
-        var mobileBg = $('.bg-img').data('mobile-img');
-        var desktopBg = $('.bg-img').attr('src');
+        var bgImg = $('.bg-img');
+        var mobileBg = $(bgImg).data('mobile-img');
+        var desktopBg = $(bgImg).attr('src');
 
         function checkBgImage() {
 
