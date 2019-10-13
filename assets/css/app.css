@@ -169,6 +169,7 @@ nav .menu-container {
     background-position: 0 358px;
     background-repeat: space;
     transition: transform .3s ease-in;
+    height: 100%;
 }
 
 nav .logo img {

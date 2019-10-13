@@ -1,5 +1,16 @@
 $(function() {
 
+    checkWindowHeight();
+    $(window).resize(function() {
+        checkWindowHeight();
+    });
+
+    function checkWindowHeight() {
+        if ($(window).height() + 10 < $('.menu').height() + $('.nav-top').height()) {
+            $('.menu-container').css('position', 'static');
+        }
+    }
+
     $('.change-brand-logo').on('click', function() {
         $('#brand-logo').trigger('click');
     });
