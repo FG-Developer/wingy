@@ -128,9 +128,11 @@ function setMarginToMainDataList() {
         $('.main-data-list').css('margin-top', (wh - totalHeight));
     } else {
         $('.main-data-list').css('margin-top', 30);
+        $('.close-right-area').attr('src', 'assets/img/black-close.png');
     }
 
 
     $('.accordion-contents').css('max-height', $('.right-area-container').height() - 100);
+
 
 }

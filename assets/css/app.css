@@ -320,7 +320,7 @@ div.mobile {
     height: 121px;
     width: 100%;
     position: relative;
-    background-size: 43%;
+    background-size: 150px;
 }
 
 div.mobile img.logo {
@@ -668,7 +668,7 @@ section.container .left-area .main-data-list div.item .item-content-detail .slid
 section.container .right-area {
     width: 50%;
     padding: 0 2%;
-    margin-top: 10%;
+    margin-top: 100px;
 }
 
 section.container .right-area .right-area-container {
@@ -1419,7 +1419,6 @@ section.container .picture-container .content input.end_date {
     margin-bottom: 10px;
     padding-left: 8px;
     box-sizing: border-box;
-    background-image: url(../img/down-arrow-icon.png);
     background-repeat: no-repeat;
     background-position: 93%;
     background-size: 8%;

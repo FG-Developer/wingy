@@ -243,7 +243,13 @@
         top: 460px;
     }
     section.container .right-area .right-area-container.active {
-        top: 85px;
+        top: 50px;
+        border-top-right-radius: 40px;
+    }
+    section.container .right-area .right-area-container img.close-right-area {
+        right: 25px !important;
+        top: -18px!important;
+        width: 40px!important;
     }
     section.container .right-area .right-area-container .accordion-contents {
         margin: 0 auto !important;
