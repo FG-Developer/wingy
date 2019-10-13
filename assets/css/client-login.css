@@ -361,8 +361,11 @@ label.error:after {
         bottom: 10px;
         right: 10px;
     }
+    .wrapper .wingy-logo img {
+        width: 40px;
+    }
     .bg-img {
         position: fixed;
-        border-bottom-right-radius: 200px;
+        border-bottom-right-radius: 150px;
     }
 }

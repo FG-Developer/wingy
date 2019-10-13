@@ -11,7 +11,6 @@ let mySwiper = new Swiper('.swiper-container', {
     spaceBetween: 10,
     on: {
         touchMove: function(event) {
-            $('.left-area').removeClass('active');
             $('.item-content-detail').hide();
             $('.item-content').removeClass('active');
         }
@@ -32,18 +31,7 @@ var swiperNested = new Swiper('.swiper-container-nested', {
     scrollbar: {
         el: '.swiper-scrollbar',
     },
-    mousewheel: true,
-    on: {
-        transitionStart: function() {
-            // $('.data-item').removeClass('active');
-            $('.left-area').removeClass('active');
-        },
-        click: function(event) {
-            // $(event.target).addClass('active');
-            $('.left-area').addClass('active');
-        }
-    }
-
+    mousewheel: true
 });
 
 setMarginToMainDataList();
@@ -74,15 +62,13 @@ $(function() {
     });
 
     $(".data-item").on('click', function(e) {
-
-        $('.data-item').removeClass('active');
+        $(".data-item").removeClass('active');
+        $(this).addClass('active');
         var accordionContentId = $(this).data('accordion-content');
         initRightAreaContent(accordionContentId);
-
     });
 
     $('.main-data-list').on('click', '.item-content', function(e) {
-        $('.left-area').removeClass('active');
         closeRightArea();
 
         if ($(this).hasClass('active')) {
