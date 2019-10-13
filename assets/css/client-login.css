@@ -25,22 +25,30 @@ body {
     position: relative;
 }
 
-.bg-img {
-    border-bottom-right-radius: 300px;
-    width: 100%;
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-bottom-right-radius: 200px;
+}
+
+.bg-img {
+    width: inherit;
+    height: inherit;
     object-fit: cover;
-    display: block;
 }
 
 .wrapper .wingy-logo {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 10px;
+    right: 10px;
 }
 
 .wrapper .wingy-logo img {
-    width: 70px;
+    width: 60px;
 }
 
 .wrapper div.form-area {
@@ -69,31 +77,34 @@ body {
     transform: translateY(-50%);
 }
 
-
-}
 .wrapper div.form-area div.form-container {
     margin-top: 50px;
     position: relative;
 }
+
 .wrapper div.form-area div.form-container>div {
     width: 510px;
 }
+
 .wrapper div.form-area div.form-container .head {
     background: url('../img/login-form-bg-head.png') no-repeat;
     height: 47px;
     text-align: center;
     position: relative;
 }
+
 .wrapper div.form-area div.form-container .content {
     background: url('../img/login-form-bg-center.png');
     overflow-y: scroll;
-    max-height: 300px;
-    padding-top: 50px;
+    max-height: 400px;
+    padding-top: 20px;
 }
+
 .wrapper div.form-area div.form-container .bottom {
     background: url('../img/login-form-bg-bottom.png') no-repeat;
     height: 57px;
 }
+
 .wrapper div.form-area div.form-container span {
     -webkit-text-shadow: 0 0 5px rgba(9, 5, 5, 0.57);
     -moz-text-shadow: 0 0 5px rgba(9, 5, 5, 0.57);
@@ -103,59 +114,74 @@ body {
     display: block;
     text-align: center;
 }
+
 .wrapper div.form-area div.form-container .form-success span.success-text {
     width: 70%;
     margin: 20px auto;
     font-size: 1.7em
 }
+
 .wrapper div.form-area div.form-container .form-success .socials {
     margin-top: 50px;
     text-align: center;
 }
+
 .wrapper div.form-area div.form-container .form-success span.social-text {
     margin-bottom: 20px;
     font-size: 1.2em;
     display: block !important;
 }
+
 .wrapper div.form-area div.form-container .form-success .socials span {
     display: inline-flex;
     margin: 5px;
 }
+
 .wrapper div.form-area div.form-container .content ::placeholder {
     /* Firefox, Chrome, Opera */
-    
     color: white;
 }
+
 .wrapper div.form-area div.form-container .content :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    
     color: white;
 }
+
 .wrapper div.form-area div.form-container .content ::-ms-input-placeholder {
     /* Microsoft Edge */
-    
     color: white;
 }
+
 .wrapper div.form-area div.form-container .content .steps {
     display: none;
 }
+
 .wrapper div.form-area div.form-container .content .one {
     display: block;
 }
+
 .wrapper div.form-area div.form-container .form-success {
     display: none;
 }
+
 .wrapper div.form-area div.form-container .content .form-row {
     width: 90%;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 15px auto;
     position: relative;
 }
+
+.wrapper div.form-area div.form-container .content .form-row.radio {
+    margin: 0 auto 7px auto;
+}
+
 .wrapper div.form-area div.form-container .content .form-row:last-child {
     margin-bottom: 0;
 }
+
 .wrapper div.form-area div.form-container .content .form-row select,
 .wrapper div.form-area div.form-container .content .form-row input {
-    height: 60px;
+    height: 50px;
+    line-height: 40px;
     width: 100%;
     border: 2px solid rgba(255, 255, 255, .7);
     background: rgba(0, 0, 0, .3);
@@ -171,6 +197,7 @@ body {
     box-sizing: border-box;
     font-family: 'yummoregular';
 }
+
 .wrapper div.form-area div.form-container .content .form-row input[type=checkbox] {
     opacity: 0;
     cursor: pointer;
@@ -178,7 +205,9 @@ body {
     width: 0;
 }
 
+
 /* Customize the label (the container) */
+
 .checkbox-container {
     display: block;
     position: relative;
@@ -192,7 +221,9 @@ body {
     user-select: none;
 }
 
+
 /* Hide the browser's default checkbox */
+
 .checkbox-container input {
     position: absolute;
     opacity: 0;
@@ -200,6 +231,7 @@ body {
     height: 0;
     width: 0;
 }
+
 .checkmark {
     position: absolute;
     top: 5px;
@@ -212,13 +244,17 @@ body {
     padding: 3px;
 }
 
+
 /* Show the checkmark when checked */
+
 .checkbox-container input:checked~.checkmark:after {
     display: block;
     content: '';
 }
 
+
 /* Style the checkmark/indicator */
+
 .checkbox-container .checkmark:after {
     left: 0;
     position: absolute;
@@ -230,6 +266,7 @@ body {
     border-radius: 15px;
     background-color: #ffea00;
 }
+
 .wrapper div.form-area div.form-container .content .form-row input[type=button],
 .wrapper div.form-area div.form-container .content .form-row input[type=submit] {
     background: #ffdb00 url('../img/continue-icon.png');
@@ -239,13 +276,20 @@ body {
     background-repeat: no-repeat;
     background-position: 95% center;
     font-family: 'yummosemibold';
+    padding-bottom: 5px;
 }
+
+.wrapper div.form-area div.form-container .content .form-row input[type=submit] {
+    background: #ffdb00 !important;
+}
+
 .wrapper div.form-area div.form-container .content .form-row select {
     text-align-last: center;
     background-image: url('../img/white-down-arrow.png');
     background-repeat: no-repeat;
     background-position: 95% center;
 }
+
 label.error {
     content: '';
     left: 0;
@@ -267,6 +311,7 @@ label.error {
     margin: 0 auto;
     font-size: .8em;
 }
+
 label.error:after {
     content: '';
     position: absolute;
@@ -280,16 +325,15 @@ label.error:after {
     right: 0;
     margin: 0 auto;
 }
+
 @media screen and (max-width: 800px) {
     .wrapper {
         padding: 0;
     }
-    
     .wrapper div.form-area div.form-container {
         margin-top: 0 !important;
         position: relative;
     }
-    
     .wrapper div.form-area {
         float: none;
         zoom: .8;
@@ -299,29 +343,26 @@ label.error:after {
         right: 0;
         top: 0;
     }
-    
     .wrapper div.form-area div.form-container .container {
         margin: 0 auto;
     }
 }
+
 @media screen and (max-width: 600px) {
     .wrapper div.form-area {
         zoom: .6;
     }
-    
     .wrapper div.form-area .brand-logo-area {
         width: 190px;
         height: 190px;
     }
-    
     .wrapper .wingy-logo {
         position: absolute;
         bottom: 10px;
         right: 10px;
     }
-    
     .bg-img {
         position: fixed;
-        border-bottom-right-radius: 240px;
+        border-bottom-right-radius: 200px;
     }
 }

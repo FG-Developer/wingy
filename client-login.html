@@ -14,7 +14,9 @@
 <body>
 
     <div class="wrapper">
-        <img src="assets/img/login-bg.jpg" data-mobile-img="assets/img/login-bg-mobile.jpg" class="bg-img">
+        <div class="bg">
+            <img src="assets/img/login-bg.jpg" data-mobile-img="assets/img/login-bg-mobile.jpg" class="bg-img">
+        </div>
 
         <div class="wingy-logo">
             <img src="assets/img/logo.png" alt="Wingy" class="logo">
@@ -63,35 +65,35 @@
                             <div class="form-row">
                                 <input name="birthday" id="birthday" type="text" placeholder="birthday" required data-msg="Please enter your birthday">
                             </div>
-                            <div class="form-row">
+                            <div class="form-row radio">
                                 <select name="gender" required data-msg="Please choose your gender">
                                     <option value="">select your gender</option>
                                     <option value="woman">woman</option>
                                     <option value="man">man</option>
                                 </select>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row radio">
                                 <label for="confirm1" class="checkbox-container">
                                     select your lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                     <input type="checkbox" name="confirm1" id="confirm1" required data-msg="Please check the confirm-1">
                                     <div class="checkmark"></div>
                                 </label>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row radio">
                                 <label class="checkbox-container">
                                         select your lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                     <input type="checkbox" name="confirm2" required data-msg="Please check the confirm-2">
                                     <div class="checkmark"></div>
                                 </label>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row radio">
                                 <label class="checkbox-container">
                                     select your lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                     <input type="checkbox" name="confirm3" required data-msg="Please check the confirm-3">
                                     <div class="checkmark"></div>
                                 </label>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row radio">
                                 <label class="checkbox-container">
                                     select your lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                     <input type="checkbox" name="confirm4">
@@ -144,8 +146,11 @@
             if ($(window).width() <= 600) {
                 $(bgImg).attr('src', mobileBg);
             } else {
-                $('.wrapper').height($(document).height());
-
+                var newHeight = $(document).height();
+                if ($('.form-area').height() + $('.form-area').offset().top > $(document).height()) {
+                    newHeight = newHeight + $('.form-area').offset().top;
+                }
+                $('.wrapper').height(newHeight);
                 $(bgImg).attr('src', desktopBg);
             }
         }
@@ -164,6 +169,7 @@
             if ($('form').valid()) {
                 $('.one').fadeOut(200, function() {
                     $('.two').fadeIn(200);
+                    checkBgImage();
                 });
             }
         });
@@ -173,6 +179,7 @@
             if ($('form').valid()) {
                 $('.form-container .container').fadeOut(200, function() {
                     $('.form-success').fadeIn(200);
+                    checkBgImage();
                 });
             }
         });
