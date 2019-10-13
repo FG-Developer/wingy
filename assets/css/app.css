@@ -424,33 +424,6 @@ section.container .left-area {
     position: relative;
 }
 
-section.container .left-area.active:after {
-    position: absolute;
-    top: 73.95%;
-    right: -.6%;
-    width: 56px;
-    height: 194px;
-    background: url(../img/right-bar-bg.png) no-repeat;
-    background-size: 100% auto;
-    content: '';
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
-    z-index: 10;
-}
-
-section.container .left-area.active:before {
-    content: '';
-    position: absolute;
-    right: 1.4%;
-    width: 13%;
-    top: 79.72%;
-    height: 62.4px;
-    background: white;
-    z-index: 20;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-}
-
 section.container .text-area h2 {
     font-size: 3.5em;
     margin: 0;
