@@ -150,13 +150,8 @@ body.mobile .wrapper {
 
 nav {
     float: left;
-    position: relative;
     width: 219px;
-    background: url(../img/sidebar-bg.png);
-    background-size: 219px 100%;
-    background-position: 0 358px;
-    background-repeat: space;
-    transition: transform .3s ease-in;
+    position: relative;
 }
 
 body.mobile nav {
@@ -164,6 +159,16 @@ body.mobile nav {
     width: auto;
     background: none;
     transform: translateX(0);
+}
+
+nav .menu-container {
+    position: fixed;
+    width: 219px;
+    background: url(../img/sidebar-bg.png);
+    background-size: 219px 100%;
+    background-position: 0 358px;
+    background-repeat: space;
+    transition: transform .3s ease-in;
 }
 
 nav .logo img {
