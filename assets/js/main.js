@@ -1,11 +1,9 @@
 let mySwiper = new Swiper('.swiper-container', {
     direction: 'vertical',
     slidesPerView: 6,
-    allowTouchMove: false,
     centeredSlides: true,
     loop: true,
     slideToClickedSlide: true,
-    centerInsufficientSlides: true,
     nested: true,
     height: 430,
     spaceBetween: 10,
@@ -25,9 +23,8 @@ var swiperNested = new Swiper('.swiper-container-nested', {
     centeredSlides: true,
     loop: true,
     slideToClickedSlide: true,
-    centerInsufficientSlides: true,
     height: 350,
-    // freeMode: true,
+    freeMode: true,
     scrollbar: {
         el: '.swiper-scrollbar',
     },
