@@ -527,6 +527,7 @@ section.container .left-area .calendar input.datepicker {
     -moz-box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
     box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
     font-family: 'yummosemibold';
+    padding-bottom: 3px;
 }
 
 section.container .left-area .calendar input.datepicker:focus {
