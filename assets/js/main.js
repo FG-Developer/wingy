@@ -1,8 +1,6 @@
-let mySwiper = new Swiper('.swiper-container', {
+var mainSliderParameters = {
     direction: 'vertical',
     slidesPerView: 6,
-    centeredSlides: true,
-    loop: true,
     slideToClickedSlide: true,
     nested: true,
     height: 430,
@@ -13,23 +11,16 @@ let mySwiper = new Swiper('.swiper-container', {
             $('.item-content').removeClass('active');
         }
     }
-});
+}
+
+if ($('.swiper-container .item').length > 7) {
+    mainSliderParameters.loop = true;
+    mainSliderParameters.centeredSlides = true;
+}
+
+let mySwiper = new Swiper('.swiper-container', mainSliderParameters);
 
 $('.main-data-list').removeClass('swiper-container-android');
-
-var swiperNested = new Swiper('.swiper-container-nested', {
-    direction: 'vertical',
-    slidesPerView: 5,
-    centeredSlides: true,
-    loop: true,
-    slideToClickedSlide: true,
-    height: 350,
-    freeMode: true,
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
-    mousewheel: true
-});
 
 setMarginToMainDataList();
 

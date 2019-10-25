@@ -420,6 +420,20 @@ body.mobile section.container div.container-area {
     right: 20px;
 }
 
+.swiper-container-nested {
+    height: 340px;
+    padding: 20px 0;
+    overflow-y: scroll;
+}
+
+.slider-item-contents {
+    margin-bottom: 40px;
+}
+
+.slider-item-contents div {
+    margin: 10px 0;
+}
+
 .text-right {
     text-align: right;
 }
@@ -512,6 +526,8 @@ section.container .left-area .calendar input.datepicker {
     -webkit-box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
     -moz-box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
     box-shadow: -1px -1px 20px 5px rgba(213, 213, 213, 0.45);
+    font-family: 'yummosemibold';
+    padding-bottom: 3px;
 }
 
 section.container .left-area .calendar input.datepicker:focus {

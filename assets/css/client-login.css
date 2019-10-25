@@ -6,7 +6,9 @@ body {
     overflow: auto;
     margin: 0;
     padding: 0;
-    font-family: 'yummosemibold';
+    font-family: 'yummosemibold' !important;
+    font-size: 18px;
+    line-height: unset !important;
 }
 
 body {
@@ -60,7 +62,7 @@ body {
 .wrapper div.form-area .brand-logo-area {
     width: 265px;
     height: 265px;
-    background: url('../img/brand-logo-area-login.png') no-repeat;
+    background: url('../images/brand-logo-area-login.png') no-repeat;
     background-size: 100%;
     margin: 0 auto 3% auto;
     position: relative;
@@ -87,21 +89,21 @@ body {
 }
 
 .wrapper div.form-area div.form-container .head {
-    background: url('../img/login-form-bg-head.png') no-repeat;
+    background: url('../images/login-form-bg-head.png') no-repeat;
     height: 47px;
     text-align: center;
     position: relative;
 }
 
 .wrapper div.form-area div.form-container .content {
-    background: url('../img/login-form-bg-center.png');
-    overflow-y: scroll;
+    background: url('../images/login-form-bg-center.png');
+    /*overflow-y: scroll;*/
     max-height: 400px;
     padding-top: 20px;
 }
 
 .wrapper div.form-area div.form-container .bottom {
-    background: url('../img/login-form-bg-bottom.png') no-repeat;
+    background: url('../images/login-form-bg-bottom.png') no-repeat;
     height: 57px;
 }
 
@@ -118,7 +120,7 @@ body {
 .wrapper div.form-area div.form-container .form-success span.success-text {
     width: 70%;
     margin: 20px auto;
-    font-size: 1.7em
+    font-size: 1.7em;
 }
 
 .wrapper div.form-area div.form-container .form-success .socials {
@@ -210,6 +212,7 @@ body {
 
 .checkbox-container {
     display: block;
+    padding-top: 4px;
     position: relative;
     padding-left: 35px;
     cursor: pointer;
@@ -219,6 +222,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin-bottom: unset !important;
 }
 
 
@@ -242,6 +246,7 @@ body {
     background: rgba(0, 0, 0, .3);
     border-radius: 15px;
     padding: 3px;
+    box-sizing: unset !important;
 }
 
 
@@ -285,7 +290,7 @@ body {
 
 .wrapper div.form-area div.form-container .content .form-row select {
     text-align-last: center;
-    background-image: url('../img/white-down-arrow.png');
+    background-image: url('../images/white-down-arrow.png');
     background-repeat: no-repeat;
     background-position: 95% center;
 }
@@ -361,11 +366,77 @@ label.error:after {
         bottom: 10px;
         right: 10px;
     }
-    .wrapper .wingy-logo img {
-        width: 40px;
-    }
     .bg-img {
         position: fixed;
-        border-bottom-right-radius: 150px;
+        border-bottom-right-radius: 200px;
     }
+}
+
+#lab_social_icon_footer {
+    padding: 0px;
+    position: fixed;
+    bottom: 0px;
+    margin: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#lab_social_icon_footer a {
+    color: #333;
+}
+
+#lab_social_icon_footer .social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+#lab_social_icon_footer .social {
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+
+/*
+    Multicoloured Hover Variations
+*/
+
+#lab_social_icon_footer #social-fb:hover {
+    color: #3B5998;
+}
+
+#lab_social_icon_footer #social-tw:hover {
+    color: #4099FF;
+}
+
+#lab_social_icon_footer #social-ins:hover {
+    color: #d34836;
+}
+
+.fa {
+    line-height: 2 !important;
+}
+
+.intl-tel-input input,
+.intl-tel-input input[type=text],
+.intl-tel-input input[type=tel]:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+
+.intl-tel-input input,
+.intl-tel-input input[type=text],
+.intl-tel-input input[type=tel] {
+    font-size: 20px !important;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+input[type='date']:after {
+    content: attr(placeholder);
+    word-break: break-all;
 }
