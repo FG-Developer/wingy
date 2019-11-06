@@ -183,7 +183,7 @@ body {
 .wrapper div.form-area div.form-container .content .form-row select,
 .wrapper div.form-area div.form-container .content .form-row input {
     height: 60px;
-    line-height: 40px;
+    line-height: 50px;
     width: 100%;
     border: 2px solid rgba(255, 255, 255, .7);
     background: rgba(0, 0, 0, .3);
