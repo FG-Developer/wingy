@@ -97,7 +97,7 @@ body {
 
 .wrapper div.form-area div.form-container .content {
     background: url('../img/login-form-bg-center.png');
-    /*overflow-y: scroll;*/
+    overflow-y: scroll;
     max-height: 400px;
     padding-top: 20px;
 }
@@ -182,8 +182,8 @@ body {
 
 .wrapper div.form-area div.form-container .content .form-row select,
 .wrapper div.form-area div.form-container .content .form-row input {
-    height: 50px;
-    line-height: 40px;
+    height: 60px;
+    line-height: 50px;
     width: 100%;
     border: 2px solid rgba(255, 255, 255, .7);
     background: rgba(0, 0, 0, .3);
