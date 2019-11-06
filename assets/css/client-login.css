@@ -62,7 +62,7 @@ body {
 .wrapper div.form-area .brand-logo-area {
     width: 265px;
     height: 265px;
-    background: url('../images/brand-logo-area-login.png') no-repeat;
+    background: url('../img/brand-logo-area-login.png') no-repeat;
     background-size: 100%;
     margin: 0 auto 3% auto;
     position: relative;
@@ -89,21 +89,21 @@ body {
 }
 
 .wrapper div.form-area div.form-container .head {
-    background: url('../images/login-form-bg-head.png') no-repeat;
+    background: url('../img/login-form-bg-head.png') no-repeat;
     height: 47px;
     text-align: center;
     position: relative;
 }
 
 .wrapper div.form-area div.form-container .content {
-    background: url('../images/login-form-bg-center.png');
+    background: url('../img/login-form-bg-center.png');
     /*overflow-y: scroll;*/
     max-height: 400px;
     padding-top: 20px;
 }
 
 .wrapper div.form-area div.form-container .bottom {
-    background: url('../images/login-form-bg-bottom.png') no-repeat;
+    background: url('../img/login-form-bg-bottom.png') no-repeat;
     height: 57px;
 }
 
@@ -290,7 +290,7 @@ body {
 
 .wrapper div.form-area div.form-container .content .form-row select {
     text-align-last: center;
-    background-image: url('../images/white-down-arrow.png');
+    background-image: url('../img/white-down-arrow.png');
     background-repeat: no-repeat;
     background-position: 95% center;
 }
