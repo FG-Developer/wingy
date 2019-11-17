@@ -21,6 +21,7 @@
             <div class="close-icon"><img src="assets/img/mobile-menu-close-icon.png" alt="Close"></div>
             <a href="index.html"><img class="logo" src="assets/img/logo.png" alt="WINGY"></a>
         </div>
+
         <nav>
             <div class="menu-container">
                 <div class="nav-top">
@@ -64,8 +65,11 @@
                             </form>
                         </div>
                         <div class="calendar-container">
-                            <div class="row">
-                                <div class="col">
+                            <input type="text" class="datepicker">
+                            <input type="hidden" name="from" id="from">
+                            <input type="hidden" name="to" id="to">
+                            <div class="row datestring">
+                                <div class="col from">
                                     <div class="date">12 june 2019</div>
                                     <div class="day">wednesday</div>
                                 </div>
@@ -75,18 +79,11 @@
                                 </div>
                             </div>
                             <div class="row dateinputs">
-                                <div class="col from-date"><input type="text"></div>
-                                <div class="col to-date"><input type="text"></div>
+                                <div class="col from-date"></div>
+                                <div class="col to-date"></div>
                             </div>
                         </div>
-                        <div class="days">
-                            <ul>
-                                <li><a href="javascript:;" class="active">daily</a></li>
-                                <li><a href="javascript:;">weekly</a></li>
-                                <li><a href="javascript:;">monthly</a></li>
-                                <li><a href="javascript:;">yearly</a></li>
-                            </ul>
-                        </div>
+
                     </div>
                     <div class="right-area">
                         <div class="right-graphs">
@@ -248,10 +245,13 @@
                     </div>
                 </div>
             </div>
-    </div>
-    </section>
+        </section>
     </div>
 
+    <script>
+        // Set language for calendar.
+        var locale = 'en';
+    </script>
     <script type="text/javascript" src="assets/js/plugins/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
@@ -259,9 +259,6 @@
     <!-- PAGE PLUGINS -->
     <script type="text/javascript" src="assets/js/plugins/Chart.min.js"></script>
     <script type="text/javascript" src="assets/js/analytics.js"></script>
-
-    <script>
-    </script>
 </body>
 
 </html>
