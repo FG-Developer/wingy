@@ -1,3 +1,105 @@
+.calendar-container {
+    margin-top: 10px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background: white;
+    padding: 10px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.calendar-container input.datepicker {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 10;
+}
+
+.calendar-container .calendar-row {
+    display: flex !important;
+}
+
+.calendar-container .calendar-row .calendar-col {
+    width: 50% !important;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.calendar-container .calendar-row .calendar-col .date {
+    font-size: 1.2rem;
+}
+
+.calendar-container .calendar-row .calendar-col.to {
+    background: #f8f9f9;
+    position: relative;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 45px;
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
+}
+
+.calendar-container .calendar-row.dateinputs {
+    -webkit-box-shadow: 0px 5px 11px 4px rgba(120, 120, 120, 0.21);
+    -moz-box-shadow: 0px 5px 11px 4px rgba(120, 120, 120, 0.21);
+    box-shadow: 0px 5px 11px 4px rgba(120, 120, 120, 0.21);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background: rgb(254, 226, 2);
+    margin-top: 10px;
+}
+
+.calendar-container .calendar-row.dateinputs .calendar-col {
+    height: 35px;
+    line-height: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.calendar-container .calendar-row.dateinputs .calendar-col.from-date {
+    position: relative;
+}
+
+.calendar-container .calendar-row.dateinputs .calendar-col.from-date:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 60%;
+    background: #000000;
+    right: 5px;
+    top: 20%;
+}
+
+.calendar-container .calendar-row.dateinputs .calendar-col.to-date {
+    padding-left: 45px;
+    position: relative;
+}
+
+.calendar-container .calendar-row.dateinputs .calendar-col.to-date:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 15%;
+    height: 70%;
+    width: 50px;
+    background-image: url('../../img/datepicker-arrow.png');
+    background-repeat: no-repeat;
+    background-position: 100%;
+}
+
+.calendar-container .calendar-row.dateinputs .calendar-col input {
+    background: transparent;
+    width: 100%;
+    border: none;
+    font-family: 'yummosemibold';
+    font-size: 1rem;
+}
+
 .ui-datepicker {
     -webkit-box-shadow: -1px -1px 30px -3px rgba(110, 92, 70, 0.74);
     -moz-box-shadow: -1px -1px 30px -3px rgba(237, 135, 16, 0.74);
@@ -176,6 +278,15 @@ html .ui-timepicker-div .ui-button.ui-state-disabled:active {
     position: relative;
 }
 
+.ui-datepicker-current-day:not(.ui-state-selected-range-end) {
+    background: black !important;
+    border-radius: 100%;
+}
+
+.ui-datepicker-current-day:not(.ui-state-selected-range-end) a.ui-state-default {
+    color: white !important;
+}
+
 .ui-state-selected-range-start {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -191,9 +302,9 @@ html .ui-timepicker-div .ui-button.ui-state-disabled:active {
     color: white !important;
     background: black !important;
     position: absolute;
-    width: 85%;
-    height: 85%;
-    top: 4px;
+    width: 80%;
+    height: 80%;
+    top: 5px;
     border-radius: 100%;
     line-height: 40px;
 }
@@ -237,8 +348,102 @@ html .ui-timepicker-div .ui-button.ui-state-disabled:active {
     color: #434343;
     cursor: pointer;
     transition: all .2s ease-in;
+    cursor: pointer;
+}
+
+.ui-datepicker .days ul li#close-calendar {
+    float: right;
+    margin-right: 15px;
+    background: #37de21;
+    color: white;
 }
 
 .ui-datepicker .days ul li.active {
     background-color: white;
+}
+
+@media screen and (max-width: 900px) {
+    .ui-datepicker td span,
+    .ui-datepicker td a {
+        width: 30px;
+        height: 30px;
+        line-height: 32px;
+        font-size: 1em;
+    }
+    .ui-state-selected-range-start a.ui-state-default {
+        left: 3px;
+    }
+    .ui-state-selected-range-end a.ui-state-default {
+        right: 3px;
+    }
+    .ui-state-selected-range-start a.ui-state-default,
+    .ui-state-selected-range-end a.ui-state-default {
+        top: 3px;
+        line-height: 25px;
+    }
+    .ui-datepicker .days ul {
+        margin: 0;
+    }
+    .ui-datepicker .days ul li {
+        border-radius: 10px;
+        height: 30px;
+        line-height: 26px;
+        width: 64px;
+        font-size: 1em;
+    }
+    .calendar-container .calendar-row .calendar-col {
+        padding: 10px !important;
+    }
+    .calendar-container .calendar-row .calendar-col.to {
+        padding-left: 10px !important;
+        clip-path: none;
+    }
+    .calendar-container .calendar-row.dateinputs .calendar-col {
+        padding: 0 10px !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .ui-state-selected-range-start a.ui-state-default,
+    .ui-state-selected-range-end a.ui-state-default {
+        width: 73%;
+    }
+    .ui-datepicker-multi .ui-datepicker-group {
+        width: 100% !important;
+        float: none !important;
+    }
+    .ui-datepicker-group-last {
+        border-left: none;
+        padding-left: 0;
+    }
+    .ui-datepicker td a {
+        width: 100%;
+        height: 100%;
+    }
+    .ui-datepicker .days {
+        height: auto;
+        margin-top: 0;
+        width: 256px;
+    }
+    .ui-datepicker .days ul {
+        padding: 7px 0 !important;
+    }
+    .ui-datepicker .days ul li {
+        margin: 0 2.5%;
+        width: 50px;
+        font-size: .8rem;
+    }
+    .ui-datepicker .days ul li#close-calendar {
+        margin-right: 1.1%;
+        margin-top: 10px;
+    }
+    .calendar-container .calendar-row .calendar-col .date {
+        font-size: .9rem !important;
+    }
+    .calendar-container .calendar-row .calendar-col .day {
+        font-size: .8rem;
+    }
+    .calendar-container .calendar-row.dateinputs .calendar-col {
+        font-size: .8rem;
+    }
 }

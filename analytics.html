@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/js/plugins/jquery-ui/jquery-ui.min.css">
+
+    <script>
+        // Set language for calendar.
+        var locale = 'en';
+    </script>
 </head>
 
 <body>
@@ -68,22 +73,21 @@
                             <input type="text" class="datepicker">
                             <input type="hidden" name="from" id="from">
                             <input type="hidden" name="to" id="to">
-                            <div class="row datestring">
-                                <div class="col from">
-                                    <div class="date">12 june 2019</div>
-                                    <div class="day">wednesday</div>
+                            <div class="calendar-row datestring">
+                                <div class="calendar-col from">
+                                    <div class="date"></div>
+                                    <div class="day"></div>
                                 </div>
-                                <div class="col to">
-                                    <div class="date">12 july 2019</div>
-                                    <div class="day">sunday</div>
+                                <div class="calendar-col to">
+                                    <div class="date"></div>
+                                    <div class="day"></div>
                                 </div>
                             </div>
-                            <div class="row dateinputs">
-                                <div class="col from-date"></div>
-                                <div class="col to-date"></div>
+                            <div class="calendar-row dateinputs">
+                                <div class="calendar-col from-date"></div>
+                                <div class="calendar-col to-date"></div>
                             </div>
                         </div>
-
                     </div>
                     <div class="right-area">
                         <div class="right-graphs">
@@ -248,12 +252,9 @@
         </section>
     </div>
 
-    <script>
-        // Set language for calendar.
-        var locale = 'en';
-    </script>
     <script type="text/javascript" src="assets/js/plugins/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/datepicker.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
 
     <!-- PAGE PLUGINS -->
