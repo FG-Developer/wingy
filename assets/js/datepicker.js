@@ -5,6 +5,7 @@ if ($(".datepicker").length) {
         dateFormat: "dd.mm.yy",
         showOtherMonths: true,
         selectOtherMonths: true,
+        maxDate: new Date(),
         onSelect: function(selectedDate) {
             if (!$(this).data().datepicker.first) {
                 $(this).data().datepicker.inline = true
