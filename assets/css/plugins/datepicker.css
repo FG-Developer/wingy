@@ -392,16 +392,16 @@ html .ui-timepicker-div .ui-button.ui-state-disabled:active {
 }
 
 @media screen and (max-width: 450px) {
-    .ui-datepicker td {
-        width: 14.28571%;
-        height: 40px;
-    }
     #ui-datepicker-div {
         width: 90% !important;
         left: 0 !important;
         right: 0 !important;
         margin: 0 auto !important;
         box-sizing: border-box;
+    }
+    .ui-datepicker td {
+        width: 14.28571%;
+        height: 40px;
     }
     .ui-datepicker-multi .ui-datepicker-group {
         width: 100% !important;
