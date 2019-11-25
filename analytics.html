@@ -4,12 +4,13 @@
 <head>
     <title>WINGY ANALYTICS</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/js/plugins/jquery-ui/jquery-ui.min.css">
 
     <script>
-        // Set language for calendar.
+        // Note that the following language parameter is required for calendar. It must be on anywhere that calendar will work.
         var locale = 'en';
     </script>
 </head>
@@ -71,7 +72,9 @@
                         </div>
                         <div class="calendar-container">
                             <input type="text" class="datepicker">
+                            <!-- The From date which selected will be set to the "from" input -->
                             <input type="hidden" name="from" id="from">
+                            <!-- The To date which selected will be set to the "to" input -->
                             <input type="hidden" name="to" id="to">
                             <div class="calendar-row datestring">
                                 <div class="calendar-col from">
