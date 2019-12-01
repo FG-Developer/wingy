@@ -1,5 +1,5 @@
 if ($(".datepicker").length) {
-
+    setDefaultDate();
     var datePicker = $(".datepicker").datepicker({
         numberOfMonths: 2,
         dateFormat: "dd.mm.yy",
@@ -109,14 +109,6 @@ if ($(".datepicker").length) {
         setDefaultDate(from_date, new Date());
         $(".datepicker").datepicker("hide");
     });
-
-    // $(document).on('click', '#close-calendar', function() {
-    //     var from_date = $('#from').val();
-    //     var to_date = $('#to').val();
-
-    //     setDefaultDate(compareDate(from_date), compareDate(to_date));
-    //     $(".datepicker").datepicker("hide");
-    // });
 }
 
 function compareDate(str1) {

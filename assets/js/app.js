@@ -1,6 +1,4 @@
 $(function() {
-
-    setDefaultDate();
     checkWindowHeight();
     $(window).resize(function() {
         checkWindowHeight();
