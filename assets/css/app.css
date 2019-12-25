@@ -677,9 +677,9 @@ section.container .right-area .right-area-container.active {
 section.container .right-area .right-area-container img {
     position: absolute;
     right: 15px;
-    top: -13px;
+    top: -29px;
     cursor: pointer;
-    width: 70px;
+    width: 65px;
 }
 
 section.container .right-area .right-area-container .button-area {
