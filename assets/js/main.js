@@ -13,7 +13,7 @@ var mainSliderParameters = {
     }
 }
 
-if ($('.swiper-container .item').length > 7) {
+if ($('.swiper-container .item').length > 3) {
     mainSliderParameters.loop = true;
     mainSliderParameters.centeredSlides = true;
 }
